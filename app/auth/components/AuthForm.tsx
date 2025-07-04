@@ -3,16 +3,11 @@
 import React from "react";
 import { Box, Typography, TextField, Button, IconButton } from "@mui/material";
 import Image from "next/image";
-import Google from "@mui/icons-material/Google";
-import Stack from "@mui/material/Stack";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Divider from "@mui/material/Divider";
 import ArrowForward from "@mui/icons-material/ArrowForward";
-import theme from "@/app/theme";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
-import Paper from "@mui/material/Paper";
 
 export default function AuthForm() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -54,10 +49,7 @@ export default function AuthForm() {
                 alignItems: "center",
                 gap: 3.75,
                 margin: "auto",
-                // position: 'relative',
                 my: 23.625,
-
-                // boxShadow: "0px 4px 4px 0 rgba(0.25, 0.25, 0.25, 0.25)",
               }}
             >
               <Typography
@@ -148,7 +140,7 @@ export default function AuthForm() {
                 variant="contained"
                 endIcon={<ArrowForward sx={{ fontSize: 24 }} />}
                 color="primary"
-                sx={(theme) => ({
+                sx={{
                   pt: 2,
                   pb: 2,
                   pr: 12,
@@ -157,7 +149,7 @@ export default function AuthForm() {
                   gap: 2.5,
                   height: 64,
                   width: 396,
-                })}
+                }}
               >
                 <Typography
                   sx={{
@@ -203,20 +195,20 @@ export default function AuthForm() {
                     height={28}
                   />
                 }
-                sx={(theme) => ({
+                sx={{
                   textTransform: "none",
                   borderRadius: 46,
                   height: 61,
                   width: 396,
-                })}
+                }}
               >
               <Typography
-                sx={{
+                sx={(theme) => ({   
                   fontSize: 18,
                   fontWeight: 500,
                   color: theme.palette.text.primary,
                   
-                }}
+                })}
               >
                   Sign in with Google
               </Typography>
