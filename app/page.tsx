@@ -1,13 +1,8 @@
-import Button from "@mui/material/Button";
 
-import React from 'react'
+'use client';
 
-const page = () => {
-  return (
-    <div>
-      <Button color="primary" variant="contained">Hello</Button>
-    </div>
-  )
+import { redirect } from 'next/navigation';
+
+export default function Home() {
+  redirect('/auth'); 
 }
-
-export default page
