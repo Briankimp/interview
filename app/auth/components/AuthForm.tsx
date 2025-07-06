@@ -226,7 +226,7 @@ export default function AuthForm() {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          //bgcolor="#0E0C14"
+
           position="relative"
         >
           <Box textAlign="center" color="white" maxWidth={400} px={2}>
