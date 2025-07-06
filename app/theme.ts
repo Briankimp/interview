@@ -28,6 +28,8 @@ export const theme = createTheme({
       text: {
         primary: "#6F2C6F",
         secondary: "#252428",
+        //tertiary: "#7F7C86",
+
       },
     },
 });
