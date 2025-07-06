@@ -8,6 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
+import Link from "next/link";
 
 export default function AuthForm() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -163,7 +164,7 @@ export default function AuthForm() {
                     display: "inline-block",
                   }}
                 >
-                  CONTINUE
+                  <Link href="/onboarding/step1"> CONTINUE</Link>
                 </Typography>
               </Button>
 
@@ -210,6 +211,7 @@ export default function AuthForm() {
                   
                 })}
               >
+              
                   Sign in with Google
               </Typography>
               </Button>
