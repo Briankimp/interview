@@ -13,6 +13,7 @@ interface OnboardBoxProps {
   mainTitle?: string;
   buttonText?: string;
   height?: number;
+  variant?: 'contained' | 'outlined' | 'text';
 }
 
 const OnboardBox = ({
@@ -22,6 +23,7 @@ const OnboardBox = ({
   subtitle = "Choose how You'll use the platform - as an individual or an agency",
   sectionTitle = 'Select User Type',
   mainTitle = 'Onboarding',
+  variant = 'contained',
   buttonText = 'CONTINUE',
   height = 704,
 }: OnboardBoxProps) => {
@@ -90,7 +92,9 @@ const OnboardBox = ({
               
             }}> 
             <Link href={continueLink}>  
-            <Button variant='contained' endIcon={<ArrowForward sx={{ fontSize: 24 }} />} sx={{
+            <Button variant={variant} endIcon={<ArrowForward/>}
+             sx={{
+                fontSize: 24,
                 pt: 2,
                 pb: 2,
                 pr: 12,
@@ -103,10 +107,10 @@ const OnboardBox = ({
                 <Typography sx={{
                     fontSize: 18,
                     fontWeight: 500,
-                    width: 91,
-                    height: 27,
+                    // width: 91,
+                    // height: 27,
                     textAlign: "center",                    
-                    display: "inline-block"
+                    // display: "inline-block"
                 }}>
                     {buttonText}
                 </Typography>
