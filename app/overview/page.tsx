@@ -34,7 +34,7 @@ const page = () => {
     <Template>
       <Box
       sx={{
-        //display: 'flex',
+        
         display: 'flex',
        alignItems: 'center',
         flexDirection: 'column',
@@ -43,27 +43,9 @@ const page = () => {
         //width: { xs: '100%', sm: '95%', md: '100%', lg: '85%' },
         //maxWidth: { xs: '100%', sm: '600px', md: '800px', lg: '1200px' },
         mx: { xs: 1, sm: 2, md: 3, lg: 4 },
-        my: { xs: 1, sm: 2, md: 3 },
-        boxSizing: 'border-box',
+
         overflowY: { xs: 'auto', md: 'visible' },
-        mt:10,
-       // maxHeight: { xs: 'none', md: 'none' },
-        //padding: { xs: 2, sm: 3, md: 4 },
-       // borderRadius: { xs: 0, sm: 2, md: 4 },
-        //border: { xs: 'none', sm: '1px solid rgba(0,0,0,0.1)' }
-     
-          // display: 'flex',
-          // alignItems: 'stretch',
-          // flexDirection: 'column',
-          // justifyContent: 'flex-start',
-          // gap: { xs: 1, sm: 1.5 },
-          // mx: { xs: 1, sm: 2, md: 3, lg: 4 },
-          // my: { xs: 1, sm: 2, md: 3 },
-          // boxSizing: 'border-box',
-          // overflow: 'hidden',
-          // width: '100%',
-          //minHeight: '100vh',
-          // padding: { xs: 2, sm: 3, md: 4 },
+
         }}>
         <Box
         sx={{
@@ -71,7 +53,7 @@ const page = () => {
           alignItems: 'center',
           flexDirection: {md:'row', xs:'column'},
           justifyContent: 'space-between',
-          //height: 38,
+
           width: '100%',
         }}>
           <Box
@@ -299,10 +281,8 @@ const page = () => {
             flexDirection: {md:'row', xs:'column'},
             justifyContent: 'space-between',
             width: '100%',
-            //gap: 2.5,
             backgroundColor: 'lighert.main',
             borderRadius: 1.25,
-            //height: 58,
             px: 2.5,
             py: 1.25,
             boxSizing: 'border-box',
@@ -459,18 +439,6 @@ const page = () => {
                 >
                   Start New Campaign
                 </DashboardButton>
-                <DashboardButton 
-                startIcon={<EmojiFlagsIcon sx={{ color: 'dashIcons.main' }} />}
-                variant="contained"
-                sx={{
-                  borderRadius: 4,
-                  height: 38,
-                  px: 2.5,
-                  py: 1.5,
-                  gap: 0.75,
-                }}  
-                >Testing</DashboardButton>
-
                 <DashboardButton variant="contained"
                 startIcon={<ShareIcon sx={{ color: 'dashIcons.main' }} />}
                >Connect Ad Accounts</DashboardButton>
@@ -547,8 +515,6 @@ const page = () => {
                   py: 0.5,
                 height: 64,
                 width: 64,
-                //background: "lighert.main",
-
                 backgroundColor: "lighert.main",
                 }}>
                  <SummarizeIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>

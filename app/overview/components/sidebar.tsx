@@ -1,10 +1,16 @@
 import { Box, Link, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
-import ArrowForward from '@mui/icons-material/ArrowForward'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Search from './search'
 
 const Sidebar = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed)
+  }
+
   const MainSidebarItems = [
     {
       title: 'Overview',
@@ -16,7 +22,7 @@ const Sidebar = () => {
       title: 'Accounts',
       icon: <Image src="/overviewicon.svg" alt="Onboarding" width={24} height={24} />,
       link: '/onboarding',
-     arrow:  <ArrowForward sx={{
+     arrow:  <ArrowForwardIosIcon sx={{
         width: 8,
         height: 9
       }}/>
@@ -91,10 +97,11 @@ const Sidebar = () => {
       flexDirection: 'column',
 
       alignItems: 'center', 
-      width: 249,
+      width: isCollapsed ? 64 : 249,
       height: '100vh', 
       py: 3,
       gap: 3,
+      transition: 'width 0.3s ease-in-out',
 
       }}>
             <Box sx={{               
@@ -106,8 +113,24 @@ const Sidebar = () => {
               paddingRight:2.5,
               boxSizing: 'border-box'
               }}>
-                 <Image src="/logowhite.svg" alt="Logo" width={160} height={22} />
-                 <Image src="/arrows.svg" alt="Arrow" width={8} height={9} />
+                <Image  
+                  src="/logowhite.svg" 
+                  alt="Logo" 
+                  width={160} 
+                  height={22} 
+                  style={{ display: isCollapsed ? 'none' : 'block' }}
+                />
+                <ArrowForwardIosIcon
+                   onClick={toggleSidebar}
+                   sx={{
+                     width: 10,
+                     height: 11,
+                     cursor: 'pointer',
+                     transition: 'transform 0.3s',
+                     transform: isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)',
+                     color: 'dashIcons.main',
+                   }}
+                />
             </Box>
 
 
@@ -126,35 +149,33 @@ sx={{
               gap: 2,
 }}>
                 <Typography
-                sx={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: 'dashboardText.primary',
-                  letterSpacing: 1
-                }}>
+                  variant="h6"
+                  sx={{
+                    color: 'dashboardText.primary',
+                    display: !isCollapsed ? 'block' : 'none'
+                  }}>
                   Main
                 </Typography>
 
                 {MainSidebarItems.map((item) => (
-                  <Box sx={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'flex-start',
-                    width: 229,
-                    height: 38,
-                    borderRadius: 1.5,
-                    gap: 3,
-                    py: 1.25,
-                    px: 0.875,
-                    '&:hover': {
-                      backgroundColor: 'hover.main',
-                    },
-                    boxSizing: 'border-box'
-                    }}>
-
+                    <Box sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'flex-start',
+                      width: isCollapsed ? 64 : 229,
+                      height: 38 ,
+                      borderRadius: 1.5,
+                      gap: 3,
+                      py: 1.25,
+                      px: 0.875,
+                      '&:hover': {
+                        backgroundColor: 'hover.main',
+                      },
+                      boxSizing: 'border-box'
+                      }}>
                   <Link key={item.title} href={item.link}>
 
-                   <Box sx={{ 
+                  <Box sx={{ 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'flex-start',
@@ -170,26 +191,19 @@ sx={{
                         sx={{
                           display: 'flex',
                           alignItems: 'center',
-                          gap: 2.25
+                          gap: 1
                         }}>
-                      {item.icon}
-                      <Typography
-                      sx={{
-                        fontSize: 14,
-                        fontWeight: 400,
-                        color: 'dashboardText.primary',
-                        letterSpacing: 0.1,
-                        textTransform: 'none'
-                      }}>
-                        {item.title}
-                      </Typography>
+                        {item.icon}
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            color: 'dashboardText.primary',
+                            display: !isCollapsed ? 'block' : 'none'
+                          }}>
+                            {item.title}
+                        </Typography>
+                      </Box >
                       </Box>
-                      {item?.arrow && (
-                        <Box> 
-                          {item.arrow}
-                        </Box>
-                      )}
-                    </Box>
                   </Link>
                   </Box>
                 ))}
@@ -203,20 +217,21 @@ sx={{
 }}>
               
                 <Typography
-                sx={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: 'dashboardText.primary',
-                  letterSpacing: 1
-                }}>Other</Typography>
+                  variant="h6"
+                  sx={{
+                    color: 'dashboardText.primary',
+                    display: !isCollapsed ? 'block' : 'none'
+                  }}>
+                  Other
+                </Typography>
                 
                 {OtherSidebarItems.map((item) => (
                   <Box sx={{ 
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'flex-start',
-                    width: 229,
-                    height: 38,
+                    width: isCollapsed ? 64 : 229,
+                    height: 38 ,
                     borderRadius: 1.5,
                     gap: 3,
                     py: 1.25,
@@ -248,12 +263,12 @@ sx={{
                           gap: 1
                         }}>
                         {item.icon}
-                        <Typography sx={{
-                          fontSize: 14,
-                          fontWeight: 400,
-                           color: 'dashboardText.primary', 
-                           letterSpacing: 0.1
-                           }}>
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            color: 'dashboardText.primary',
+                            display: !isCollapsed ? 'block' : 'none'
+                          }}>
                             {item.title}
                         </Typography>
                       </Box >
@@ -264,29 +279,6 @@ sx={{
                 </Box>
             </Stack>
     </Box>
-    {/* <Box sx={{ 
-        // // position: 'fixed', 
-        // top: 0,
-        // // left: 249,
-        //  right: 0,   
-        display: 'flex', 
-        alignItems: 'center',
-        //  //width: '100%', 
-        //  flexDirection: 'row',
-        //  justifyContent: 'flex-end',
-        //  height: 72,
-        //  gap: 4,
-        //  px: 2.5,
-        //  pt: 1.75,
-        //  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-         }}>
-      <Search/>
-      <Image src="/bell.svg" alt="Bell" width={24} height={24} />
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <Typography>Username</Typography>
-        <Image src="/username.svg" alt="Username" width={24} height={24} />
-      </Box>
-    </Box> */}
     </Box>
 
   )
