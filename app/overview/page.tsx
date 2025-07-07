@@ -18,6 +18,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ShareIcon from '@mui/icons-material/Share';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
+import { DashboardButton } from '../components/DashboardButton';
 const page = () => {
   const [project, setProject] = React.useState("");
   const Projects = [
@@ -35,7 +36,7 @@ const page = () => {
       sx={{
         //display: 'flex',
         display: 'flex',
-        alignItems: 'center',
+       alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'center',
         gap: { xs: 1, sm: 1.5 },
@@ -45,19 +46,32 @@ const page = () => {
         my: { xs: 1, sm: 2, md: 3 },
         boxSizing: 'border-box',
         overflowY: { xs: 'auto', md: 'visible' },
-        maxHeight: { xs: '90vh', md: 'none' },
+        mt:10,
+       // maxHeight: { xs: 'none', md: 'none' },
         //padding: { xs: 2, sm: 3, md: 4 },
-        borderRadius: { xs: 0, sm: 2, md: 4 },
+       // borderRadius: { xs: 0, sm: 2, md: 4 },
         //border: { xs: 'none', sm: '1px solid rgba(0,0,0,0.1)' }
-
+     
+          // display: 'flex',
+          // alignItems: 'stretch',
+          // flexDirection: 'column',
+          // justifyContent: 'flex-start',
+          // gap: { xs: 1, sm: 1.5 },
+          // mx: { xs: 1, sm: 2, md: 3, lg: 4 },
+          // my: { xs: 1, sm: 2, md: 3 },
+          // boxSizing: 'border-box',
+          // overflow: 'hidden',
+          // width: '100%',
+          //minHeight: '100vh',
+          // padding: { xs: 2, sm: 3, md: 4 },
         }}>
         <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
-          flexDirection: 'row',
+          flexDirection: {md:'row', xs:'column'},
           justifyContent: 'space-between',
-          height: 38,
+          //height: 38,
           width: '100%',
         }}>
           <Box
@@ -70,31 +84,21 @@ const page = () => {
           }}
           >
             <Typography
+            variant="h3"
             sx={{
-              fontSize: 24,
-              fontWeight: 600,
               color: 'text.primary',
-              letterSpacing: 0,
-              textTransform: 'none',
             }}
             >Home</Typography>
             <ArrowForwardIosIcon 
             sx={{
               color: 'light.main',
-              //fontSize: 24,
               height: 7,
               width: 12,
             }}/>
             <Typography
+            variant="h4"
             sx={{
-              fontSize: {md:18, xs:14, sm:16, lg:20},
-              fontWeight: 600,
               color: 'light.main',
-              letterSpacing: 0,
-              textTransform: 'none',
-              height: 27,
-             // width: 124,
-              //lineHeight:"100%",
             }}
             >Project Name</Typography>
           </Box>  
@@ -127,7 +131,14 @@ const page = () => {
           }}
         >
           <MenuItem value="" disabled sx={{}}>
+          <Typography
+          variant="body1"
+          sx={{
+            color: 'text.primary',
+          }}
+          >
             Project Name
+          </Typography>
           </MenuItem>
           {Projects.map((option) => (
             <MenuItem key={option} value={option}>
@@ -174,12 +185,9 @@ const page = () => {
             boxSizing: 'border-box',
           }}>
             <Typography
+            variant="h1"
             sx={{
-              fontSize: { xs: 18, sm: 20, md: 26, lg: 36 },
-              fontWeight: 600,
               color: 'dashboardText.white',
-              letterSpacing: 0,
-              textTransform: 'none',
             }}
             > Welcome to your new project : [ProjectName]
             </Typography>
@@ -193,13 +201,9 @@ const page = () => {
              width: 'fit-content',
             }} >
               <Typography
+              variant="h6"
               sx={{
-                fontSize: {md:14, xs:10, sm:12, lg:16},
-                fontWeight: 500,
                 color: 'text.primary',
-                letterSpacing: 0,
-                textTransform: 'none',
-                
               }}
               >Project Settings</Typography>
             </Button>
@@ -235,24 +239,18 @@ const page = () => {
             boxSizing: 'border-box',
           }}>
           <Typography
+          variant="h4"
           sx={{
-            fontSize: {md:16, xs:14, sm:16, lg:18},
-            fontWeight: 600,
             color: 'text.primary',
-            letterSpacing: 0,
-            textTransform: 'none',
           }}
           >Onboarding Progress</Typography>
           <Button variant="text" 
           startIcon={<CancelOutlinedIcon color="primary" />}
            >
             <Typography
+            variant="body1"
             sx={{
-              fontSize: {md:14, xs:12, sm:14, lg:16},
-              fontWeight: 500,
               color: 'primary.main',
-              letterSpacing: 0,
-              textTransform: 'none',
             }}
             >
               Hide
@@ -268,17 +266,14 @@ const page = () => {
             justifyContent: 'flex-start',
             gap: 2.5,
             width: '100%',
-            height: 49,
+            //height: 49,
 
           }}>
           <Typography
+          variant="body1"
           sx={{
-            fontSize: {md:14, xs:12, sm:14, lg:16},
-            fontWeight: 400,
             color: 'text.primary',
-            letterSpacing: 0,
-            textTransform: 'none',
-            }}>
+          }}>
             You've completed 2 of 6 steps onboarding
           </Typography>
               <Box
@@ -314,34 +309,15 @@ const page = () => {
             
           }}>
             <Typography
+            variant="h4"
             sx={{
-              fontSize: {md:16, xs:14, sm:16, lg:18},
-              fontWeight: 600,
               color: 'text.primary',
-              letterSpacing: 0,
-              textTransform: 'none',
             }}
             >What's next</Typography>
-            <Button variant="contained"
-             sx={{
-              borderRadius: { xs: 4, sm: 5, md: 6 },
-              //height: 48,
-              px: { xs: 0.5, sm: 1, md: 2 },
-              py: { xs: 0.5, sm: 1, md: 1.5 },
-              gap: { xs: 0.5, sm: 0.75, md: 1 },
-              boxSizing: 'border-box',
-            }} startIcon={<EmojiFlagsIcon sx={{ color: 'dashboardText.white' }} />}>
-              <Typography
-                sx={{
-                fontSize: {md:14, xs:12, sm:14, lg:16},
-                fontWeight: 500,
-                color: 'dashboardText.white',
-                letterSpacing: 0,
-                textTransform: 'none',
-                border: '1px solid primary.main',
-              }}
-              >Start New Campaign</Typography>
-            </Button>
+            <DashboardButton variant="contained"
+             startIcon={<EmojiFlagsIcon sx={{ color: 'dashboardText.white' }} />}>
+              Start New Campaign
+            </DashboardButton>
           </Box>
           <Box
           sx={{
@@ -369,11 +345,9 @@ const page = () => {
             }}>
               <CheckCircleIcon color="success"/>
               <Typography
+              variant="body1"
               sx={{
-                fontSize: 14,
-                fontWeight: 500,
                 color: 'text.primary',
-                letterSpacing: 0,
               }}
               >User Type Selected</Typography>                
 
@@ -474,74 +448,40 @@ const page = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                flexDirection: 'row',
+                flexDirection:{md:'row',xs:'column'},
                 justifyContent: 'flex-start',
                 gap: 1,
                 width: '100%',
               }}>
-                <Button variant="contained"
+                <DashboardButton variant="contained"
                 startIcon={<EmojiFlagsIcon sx={{ color: 'dashIcons.main' }} />}
-                sx={{
-                  borderRadius: 4,
-                  height: 38,
-                  px: 2.5,
-                  py: 1.5,
-                  gap: 0.75,
-                }}
+               
                 >
-                  <Typography
-                  sx={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: 'text.white',
-                    letterSpacing: 0,
-                    textTransform: 'none',
-                  }}
-                  >Start New Campaign</Typography>
-                </Button>
-
-                <Button variant="contained"
-                startIcon={<ShareIcon sx={{ color: 'dashIcons.main' }} />}
+                  Start New Campaign
+                </DashboardButton>
+                <DashboardButton 
+                startIcon={<EmojiFlagsIcon sx={{ color: 'dashIcons.main' }} />}
+                variant="contained"
                 sx={{
                   borderRadius: 4,
                   height: 38,
                   px: 2.5,
                   py: 1.5,
                   gap: 0.75,
-                }}>
-                  <Typography
-                    sx={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: 'text.white',
-                    letterSpacing: 0,
-                    textTransform: 'none',
-                  }}
-                  >Connect Ad Accounts</Typography>
-                </Button>
-                <Button variant="contained"
+                }}  
+                >Testing</DashboardButton>
+
+                <DashboardButton variant="contained"
+                startIcon={<ShareIcon sx={{ color: 'dashIcons.main' }} />}
+               >Connect Ad Accounts</DashboardButton>
+                <DashboardButton variant="contained"
                 startIcon={<FileUploadIcon 
                   sx={{
                     color: 'dashboardText.white',
                   }}
-                  />}
-                sx={{
-                  borderRadius: 4,
-                  height: 38,
-                  px: 2.5,
-                  py: 1.5,
-                  gap: 0.75,
-                }}>
-                  <Typography
-                    sx={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: 'text.white',
-                    letterSpacing: 0,
-                    textTransform: 'none',
-                  }}
-                  >Upload Media Assets</Typography>
-                </Button>
+                  />}>
+                    Upload Media Assets
+                    </DashboardButton>
               </Box>
                           
               <Box
@@ -576,7 +516,7 @@ const page = () => {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  flexDirection:{xs:'column',sm:'row'},
+                  flexDirection:{xs:'column',md:'row'},
                   justifyContent: 'space-between',
                   gap: 1,
                   width: '100%',
@@ -675,7 +615,7 @@ const page = () => {
                   py: 0.5,
                 height: 64,
                 width: 64,
-                //background: "lighert.main",
+
 
                 backgroundColor: "lighert.main",
                 }}>
@@ -720,6 +660,74 @@ const page = () => {
                </Paper>
                <Paper
                sx={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 flexDirection: 'row',
+                 justifyContent: 'flex-start',
+                 gap: 1.5,
+                 borderRadius: 2,
+                 px: 2.5,
+                 py: 1.75,
+                 border: '1px solid #0000001F',
+                 boxSizing: 'border-box',
+                 flex: 1,
+                 width: '100%',
+               }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 1.5,
+                  px: 0.25,
+                  py: 0.5,
+                height: 64,
+                width: 64,
+
+
+                backgroundColor: "lighert.main",
+                }}>
+            <GroupsIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>
+                 </Box>
+               <Box
+                sx={{
+               
+                  width: '100%',
+                
+                 }}>
+                <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  gap: 1,
+                  width: '100%',
+                }}>
+                <Typography
+                sx={{
+                  fontSize: 16,
+                  fontWeight: 500,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >Active Team Members</Typography>    
+                <InfoOutlineIcon/>            
+                </Box>
+                <Typography
+                sx={{
+                  fontSize: 32,
+                  fontWeight: 600,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >0</Typography>
+               </Box>
+               </Paper>
+               {/* <Paper
+               sx={{
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'row',
@@ -742,7 +750,6 @@ const page = () => {
                   py: 0.5,
                 height: 64,
                 width: 64,
-                //background: "lighert.main",
 
                 backgroundColor: "lighert.main",
                 }}>
@@ -787,7 +794,7 @@ const page = () => {
                 }}
                 >3</Typography>
                </Box>
-               </Paper>
+               </Paper> */}
               </Stack>
 
 
