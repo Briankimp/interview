@@ -50,13 +50,7 @@ const StyledButton = styled(MuiButton)<DashboardButtonProps>(({ theme, variant }
       backgroundColor: theme.palette.lighert.main,
       color: theme.palette.dashboardText.white,
     },
-
-    '& .MuiButton-label': {
-      fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
-      fontWeight: 500,
-      color: 'text.primary',
-      letterSpacing: 0,
-    },
+   
   },
   
   '&.MuiButton-text': {

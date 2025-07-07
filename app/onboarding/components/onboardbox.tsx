@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import ArrowForward from '@mui/icons-material/ArrowForward'
 import Link from 'next/link'
+import ContinueButton from '@/app/components/ContinueButton'
 interface OnboardBoxProps {
   children: React.ReactNode;
   stepLabel?: string;
@@ -92,29 +93,10 @@ const OnboardBox = ({
               
             }}> 
             <Link href={continueLink}>  
-            <Button variant={variant} endIcon={<ArrowForward/>}
-             sx={{
-                fontSize: 24,
-                pt: 2,
-                pb: 2,
-                pr: 12,
-                pl: 14,
-                borderRadius: 46,
-                gap: 2.5,
-                height: 64,
-                width: 396
-            }}>
-                <Typography sx={{
-                    fontSize: 18,
-                    fontWeight: 500,
-                    // width: 91,
-                    // height: 27,
-                    textAlign: "center",                    
-                    // display: "inline-block"
-                }}>
-                    {buttonText}
-                </Typography>
-            </Button>
+            <ContinueButton href={continueLink} variant={variant}>
+                {buttonText}
+            </ContinueButton>
+
             </Link>
             </Box>
             </Box>

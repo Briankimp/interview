@@ -9,6 +9,8 @@ import ArrowForward from "@mui/icons-material/ArrowForward";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import Link from "next/link";
+import ContinueButton from "@/app/components/ContinueButton";
+import InputField from "@/app/components/InputField";
 
 export default function AuthForm() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -19,7 +21,7 @@ export default function AuthForm() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: {md:"row", xs:"column"},
           width: "100%",
           height: "100%",
         }}
@@ -40,7 +42,7 @@ export default function AuthForm() {
           >
             <Box
               sx={{
-                width: 456,
+                width: {md: 456, sm: 320},
                 minHeight: 570,
                 p: 3.75,
                 borderRadius: "20px",
@@ -51,13 +53,13 @@ export default function AuthForm() {
                 gap: 3.75,
                 margin: "auto",
                 my: 23.625,
+                boxSizing: "border-box",
               }}
             >
               <Typography
-                variant="h5"
-                fontWeight={600}
+                variant="h1"                
                 textAlign="center"
-                sx={{ fontSize: 34 }}
+               
               >
                 Sign In
               </Typography>
@@ -71,48 +73,26 @@ export default function AuthForm() {
                   alignItems: "center",
                 }}
               >
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  margin="normal"
-                  defaultValue="Email"
-                  InputProps={{
-                    sx: {
-                      borderRadius: 36,
-                      px: 2.125,
-                      py: 3.75,
-                      width: 396,
-                      height: 61,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 1.25,
-                    },
-                  }}
+
+                <InputField                
+                defaultValue="Email"
+                placeholder="Email"               
                 />
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  type="text"
-                  margin="normal"
-                  defaultValue="Password"
-                  InputProps={{
-                    endAdornment: (
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    ),
-                    sx: {
-                      borderRadius: 36,
-                      px: 2.125,
-                      py: 3.75,
-                      width: 396,
-                      height: 61,
-                    },
-                  }}
+
+                <InputField                
+                    defaultValue="Password"
+                    placeholder="Password" 
+                     type={showPassword ? "text" : "password"}
+                InputProps={{
+                  endAdornment: (
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  ),                 
+                }}
                 />
               </Box>
 
@@ -121,11 +101,13 @@ export default function AuthForm() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  width: 396,
+                  width: {md:396, sm:200},
                 }}
               >
                 <FormControlLabel
-                  control={<Checkbox defaultChecked size="small" />}
+
+                  control={<Checkbox defaultChecked size="small"
+                     />}
                   label={<Typography fontSize={14}>Remember me</Typography>}
                 />
                 <Typography
@@ -137,39 +119,15 @@ export default function AuthForm() {
                 </Typography>
               </Box>
 
-              <Button
-                variant="contained"
-                endIcon={<ArrowForward sx={{ fontSize: 24 }} />}
-                color="primary"
-                sx={{
-                  pt: 2,
-                  pb: 2,
-                  pr: 12,
-                  pl: 14,
-                  borderRadius: 46,
-                  gap: 2.5,
-                  height: 64,
-                  width: 396,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: 18,
-                    fontWeight: 500,
-                    color: "#FFFFFF",
-                    width: 91,
-                    height: 27,
-                    textAlign: "center",
-                    lineHeight: "27px",
-                    display: "inline-block",
-                  }}
-                >
-                  <Link href="/onboarding/step1"> CONTINUE</Link>
-                </Typography>
-              </Button>
+             
+                  <ContinueButton
+                  variant="contained" 
+                  href="/onboarding/step1"
+                  >CONTINUE</ContinueButton>  
 
-              <Typography variant="body2" align="center">
-                New here?{" "}
+              <Typography
+               variant="body2" align="center">
+                New here?
                 <Typography
                   component="span"
                   color="primary"
@@ -199,30 +157,29 @@ export default function AuthForm() {
                 sx={{
                   textTransform: "none",
                   borderRadius: 46,
-                  height: 61,
-                  width: 396,
+                  height: {sm:50, md:61},
+                  width: {md:396, sm:200},
+                  boxSizing: "border-box",
                 }}
               >
               <Typography
-                sx={(theme) => ({   
-                  fontSize: 18,
-                  fontWeight: 500,
-                  color: theme.palette.text.primary,
-                  
-                })}
+                variant="h4"
+                sx={{
+                  color: 'text.primary'
+                }}
               >
-              
                   Sign in with Google
               </Typography>
               </Button>
-              
+
+            
             </Box>
           </Box>
         </Box>
 
         <Box
-          sx={{ flex: 1, backgroundColor: "red" }}
-          bgcolor="white"
+          sx={{ flex: 1, backgroundColor: 'primary.main'}}
+         // bgcolor="white"
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -230,12 +187,7 @@ export default function AuthForm() {
           position="relative"
         >
           <Box textAlign="center" color="white" maxWidth={400} px={2}>
-            {/* <Image
-            src="/sideimage.svg" // Save your 3D image to /public
-            alt="Marketing Illustration"
-            width={720}
-            height={1024}
-          />  */}
+
           </Box>
         </Box>
       </Box>

@@ -16,7 +16,6 @@ const Sidebar = () => {
       title: 'Overview',
       icon: <Image src="/overviewicon.svg" alt="Dashboard" width={24} height={24} />,
       link: '/overview',
-      // arrow: <ArrowForward sx={{ width: 8, height: 9 }} />,
     },
     {
       title: 'Accounts',
