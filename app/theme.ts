@@ -42,92 +42,90 @@ declare module '@mui/material/styles' {
 }
 
 export const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   typography: {
     fontFamily: 'Poppins',
-    // h1: {
-    //   fontSize: '2.5rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '2rem',
-    //   },
-    // },
-    // h2: {
-    //   fontSize: '2rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1.75rem',
-    //   },
-    // },
-    // h3: {
-    //   fontSize: '1.75rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1.5rem',
-    //   },
-    // },
-    // h4: {
-    //   fontSize: '1.5rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1.25rem',
-    //   },
-    // },
-    // h5: {
-    //   fontSize: '1.25rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1.125rem',
-    //   },
-    // },
-    // h6: {
-    //   fontSize: '1.125rem',
-    //   fontWeight: 600,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1rem',
-    //   },
-    // },
-    // subtitle1: {
-    //   fontSize: '1.125rem',
-    //   fontWeight: 500,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '1rem',
-    //   },
-    // },
-    // subtitle2: {
-    //   fontSize: '1rem',
-    //   fontWeight: 500,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '0.875rem',
-    //   },
-    // },
-    // body1: {
-    //   fontSize: '1rem',
-    //   fontWeight: 400,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '0.875rem',
-    //   },
-    // },
-    // body2: {
-    //   fontSize: '0.875rem',
-    //   fontWeight: 400,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '0.75rem',
-    //   },
-    // },
-    // caption: {
-    //   fontSize: '0.75rem',
-    //   fontWeight: 400,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '0.625rem',
-    //   },
-    // },
-    // button: {
-    //   fontSize: '0.875rem',
-    //   fontWeight: 500,
-    //   '@media (max-width: 600px)': {
-    //     fontSize: '0.75rem',
-    //   },
-    // },
+    h1: {
+      fontSize: '34px',
+      fontWeight: 600,
+      textTransform: 'none',
+      lineHeight: 1.2,
+      '@media (max-width: 599px)': {
+        fontSize: '32px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '28px',
+      },
+    },
+    h2: {
+      fontSize: '26px',
+      fontWeight: 600,
+      lineHeight: 1.3,
+      textTransform: 'none',
+      '@media (max-width: 599px)': {
+        fontSize: '24px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '22px',
+      },
+    },
+    h3: {
+      fontSize: '24px',
+      fontWeight: 600,
+      lineHeight: 1.4,
+      textTransform: 'none',
+      '@media (max-width: 599px)': {
+        fontSize: '22px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '20px',
+      },
+    },
+    h4: {
+      fontSize: '18px',
+      fontWeight: 500,
+      textTransform: 'none',
+      lineHeight: 1.5,
+      '@media (max-width: 599px)': {
+        fontSize: '16px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '14px',
+      },
+    },
+    h5: {
+      fontSize: '14px',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      textTransform: 'none',
+      '@media (max-width: 599px)': {
+        fontSize: '13px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '12px',
+      },
+    },
+    h6: {
+      fontSize: '14px',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      textTransform: 'none',
+      '@media (max-width: 599px)': {
+        fontSize: '12px',
+      },
+      '@media (max-width: 375px)': {
+        fontSize: '10px',
+      },
+    },
+   
   },
   palette: {
     primary: {
