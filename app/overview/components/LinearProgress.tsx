@@ -5,11 +5,13 @@ import Box from '@mui/material/Box';
 
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box 
+    sx={{ display: 'flex', alignItems: 'center' }}
+    >
       <Box sx={{ width: '100%', mr: 1 }}>
         <LinearProgress variant="determinate" {...props} />
       </Box>
-      <Box sx={{ minWidth: 35 }}>
+      <Box>
         <Typography
           variant="body2"
           sx={{ color: 'text.main' }}
@@ -20,11 +22,11 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
 }
 
 export default function LinearWithValueLabel() {
-  const [progress, setProgress] = React.useState(10);
+  const [progress, setProgress] = React.useState(80);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 80 ? 10 : prevProgress + 10));
+      setProgress((prevProgress) => (prevProgress >= 80 ? 80 : prevProgress + 80));
     }, 800);
     return () => {
       clearInterval(timer);

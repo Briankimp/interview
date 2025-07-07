@@ -14,11 +14,11 @@ const Header = () => {
       height: 72,
       gap: 4,
       pt: 1.75,
-      pr: 4,
-      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      pr: 5,
+      pb:2,
+      boxShadow: '0px 1px 1px #E0E0E0',
       width: '100%',
       backgroundColor: 'white',
-      minWidth: 0,
     }}
   >
     <Search />

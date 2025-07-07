@@ -2,14 +2,22 @@
 import React from 'react'
 import Template from './components/Template'
 import { Box, Button, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
-import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Image from 'next/image'
 import LinearWithValueLabel from './components/LinearProgress';
-import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import Link from 'next/link';
 import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
-
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
+import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import GroupsIcon from '@mui/icons-material/Groups';
+import ShareIcon from '@mui/icons-material/Share';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 const page = () => {
   const [project, setProject] = React.useState("");
   const Projects = [
@@ -25,18 +33,23 @@ const page = () => {
     <Template>
       <Box
       sx={{
+        //display: 'flex',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'center',
-        // backgroundColor: 'primary.main',
-        p:2.5,
-        height: 500,
+        gap: { xs: 1, sm: 1.5 },
+        //width: { xs: '100%', sm: '95%', md: '100%', lg: '85%' },
+        //maxWidth: { xs: '100%', sm: '600px', md: '800px', lg: '1200px' },
+        mx: { xs: 1, sm: 2, md: 3, lg: 4 },
+        my: { xs: 1, sm: 2, md: 3 },
         boxSizing: 'border-box',
-        top:35,
-       margin: ' auto',
-        border: '1px solid ',
-        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        overflowY: { xs: 'auto', md: 'visible' },
+        maxHeight: { xs: '90vh', md: 'none' },
+        //padding: { xs: 2, sm: 3, md: 4 },
+        borderRadius: { xs: 0, sm: 2, md: 4 },
+        //border: { xs: 'none', sm: '1px solid rgba(0,0,0,0.1)' }
+
         }}>
         <Box
         sx={{
@@ -44,7 +57,8 @@ const page = () => {
           alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          height: "38px"
+          height: 38,
+          width: '100%',
         }}>
           <Box
           sx={{
@@ -55,9 +69,34 @@ const page = () => {
             gap: 2.5,
           }}
           >
-            <Typography>Home</Typography>
-            <Typography>Home</Typography>
-            <Typography>Home</Typography>
+            <Typography
+            sx={{
+              fontSize: 24,
+              fontWeight: 600,
+              color: 'text.primary',
+              letterSpacing: 0,
+              textTransform: 'none',
+            }}
+            >Home</Typography>
+            <ArrowForwardIosIcon 
+            sx={{
+              color: 'light.main',
+              //fontSize: 24,
+              height: 7,
+              width: 12,
+            }}/>
+            <Typography
+            sx={{
+              fontSize: {md:18, xs:14, sm:16, lg:20},
+              fontWeight: 600,
+              color: 'light.main',
+              letterSpacing: 0,
+              textTransform: 'none',
+              height: 27,
+             // width: 124,
+              //lineHeight:"100%",
+            }}
+            >Project Name</Typography>
           </Box>  
           <Box>
             <TextField
@@ -68,7 +107,7 @@ const page = () => {
           value={project}
           onChange={(event) => setProject(event.target.value)}
           SelectProps={{
-            IconComponent: ArrowDropDown,
+            IconComponent: KeyboardArrowDownIcon,
             displayEmpty: true,
           }}
           InputProps={{
@@ -88,7 +127,7 @@ const page = () => {
           }}
         >
           <MenuItem value="" disabled sx={{}}>
-            Select Your Project
+            Project Name
           </MenuItem>
           {Projects.map((option) => (
             <MenuItem key={option} value={option}>
@@ -103,59 +142,223 @@ const page = () => {
         <Box
         sx={{
           display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'row',
+          flexDirection: {md:'row', xs:'column'},
+         alignItems: 'center',
           justifyContent: 'flex-start',
-          height: "38px",
-          backgroundColor: 'primary.main',
-          borderRadius: 2,
-          px: 2,
-          py:3,
-          gap:5.25
-
+            width: '100%',
+            //height: 150,
+            borderRadius: 2,
+            border: '1px solid',
+            gap: 4,
+            background: `
+              linear-gradient(90deg, #56138a 0%, #cb98f3 49%, #ab61e4 57%),
+              url(/campaigns-section.jpg) center/cover no-repeat
+            `,
+             
+            backgroundBlendMode: 'overlay',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat' ,
+            boxSizing: 'border-box',  
         }}
         >
-          <Image src="/overviewcontent.svg" alt="Logo" width={150} height={138} />
+          <Image src="/overviewcontent.svg" alt="Logo" width={150} height={150} />
           <Box
           sx={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'left',
             flexDirection: 'column',
             justifyContent: 'space-between',
             gap: 2.5,
+            width: '100%',
+            boxSizing: 'border-box',
           }}>
-            <Typography> Welcome to your new project : [ProjectName]</Typography>
-            <Button variant="contained" 
+            <Typography
             sx={{
-              
+              fontSize: { xs: 18, sm: 20, md: 26, lg: 36 },
+              fontWeight: 600,
+              color: 'dashboardText.white',
+              letterSpacing: 0,
+              textTransform: 'none',
+            }}
+            > Welcome to your new project : [ProjectName]
+            </Typography>
+
+            <Button variant="contained" 
+            startIcon={<CancelOutlinedIcon color="primary" />}
+            sx={{
+              backgroundColor: 'lighert.main',
+              borderRadius: 4,
+              gap: 0.75,   
+             width: 'fit-content',
             }} >
-              Project Settings
+              <Typography
+              sx={{
+                fontSize: {md:14, xs:10, sm:12, lg:16},
+                fontWeight: 500,
+                color: 'text.primary',
+                letterSpacing: 0,
+                textTransform: 'none',
+                
+              }}
+              >Project Settings</Typography>
             </Button>
           </Box>
         </Box>
 
-        <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          height: 435,
-          boxSizing: 'border-box',
-          p:2.5,
-          gap:2.5,
-          borderRadius:2,
-          border: '1px solid ',
-          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-        }}>
-          <Typography>Onboarding Progress</Typography>
-          <Typography>You've completed 2 of 6 steps onboarding</Typography>
-          <LinearWithValueLabel />
-          <Box>
-            <Typography>What's next</Typography>
-            <Button variant="contained">Start New Campaign</Button>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              //height: 436,
+              boxSizing: 'border-box',
+              width: '100%',
+              ml:0.5,
+              mr:0.5,
+              p:2.5,
+              gap:1.5,
+              borderRadius:2,
+              border: '1px solid ',
+             // boxShadow: '1px 1px 1px 1px rgba(0.25, 0.25, 0.25, 0.25)',
+            }}>
+
+          <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            gap: 2.5,
+            width: '100%',
+            boxSizing: 'border-box',
+          }}>
+          <Typography
+          sx={{
+            fontSize: {md:16, xs:14, sm:16, lg:18},
+            fontWeight: 600,
+            color: 'text.primary',
+            letterSpacing: 0,
+            textTransform: 'none',
+          }}
+          >Onboarding Progress</Typography>
+          <Button variant="text" 
+          startIcon={<CancelOutlinedIcon color="primary" />}
+           >
+            <Typography
+            sx={{
+              fontSize: {md:14, xs:12, sm:14, lg:16},
+              fontWeight: 500,
+              color: 'primary.main',
+              letterSpacing: 0,
+              textTransform: 'none',
+            }}
+            >
+              Hide
+            </Typography>
+            </Button>
           </Box>
-          <Stack>
+
+          <Box
+          sx={{
+            display: 'flex',
+            //alignItems: 'center',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            gap: 2.5,
+            width: '100%',
+            height: 49,
+
+          }}>
+          <Typography
+          sx={{
+            fontSize: {md:14, xs:12, sm:14, lg:16},
+            fontWeight: 400,
+            color: 'text.primary',
+            letterSpacing: 0,
+            textTransform: 'none',
+            }}>
+            You've completed 2 of 6 steps onboarding
+          </Typography>
+              <Box
+                sx={{
+               display: 'flex',
+               alignItems: 'center',
+               flexDirection: 'row',
+               justifyContent: 'flex-start',
+               gap: 2.5,
+               width: '100%',
+              height: {md:21, xs:49 },
+              boxSizing: 'border-box',
+              }}
+              >
+              <LinearWithValueLabel />         
+            </Box>
+          </Box>
+
+          <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: {md:'row', xs:'column'},
+            justifyContent: 'space-between',
+            width: '100%',
+            //gap: 2.5,
+            backgroundColor: 'lighert.main',
+            borderRadius: 1.25,
+            //height: 58,
+            px: 2.5,
+            py: 1.25,
+            boxSizing: 'border-box',
+            
+          }}>
+            <Typography
+            sx={{
+              fontSize: {md:16, xs:14, sm:16, lg:18},
+              fontWeight: 600,
+              color: 'text.primary',
+              letterSpacing: 0,
+              textTransform: 'none',
+            }}
+            >What's next</Typography>
+            <Button variant="contained"
+             sx={{
+              borderRadius: { xs: 4, sm: 5, md: 6 },
+              //height: 48,
+              px: { xs: 0.5, sm: 1, md: 2 },
+              py: { xs: 0.5, sm: 1, md: 1.5 },
+              gap: { xs: 0.5, sm: 0.75, md: 1 },
+              boxSizing: 'border-box',
+            }} startIcon={<EmojiFlagsIcon sx={{ color: 'dashboardText.white' }} />}>
+              <Typography
+                sx={{
+                fontSize: {md:14, xs:12, sm:14, lg:16},
+                fontWeight: 500,
+                color: 'dashboardText.white',
+                letterSpacing: 0,
+                textTransform: 'none',
+                border: '1px solid primary.main',
+              }}
+              >Start New Campaign</Typography>
+            </Button>
+          </Box>
+          <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            gap: 2.5,
+            width: '100%',
+          }}>
+          <Stack
+          sx={{
+            display: 'flex',          
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            gap: 1.5,
+          }}>
             <Box
             sx={{
               display: 'flex',
@@ -164,7 +367,7 @@ const page = () => {
               justifyContent: 'flex-start',
               gap: 1,
             }}>
-              <CheckCircleOutlineRoundedIcon/>
+              <CheckCircleIcon color="success"/>
               <Typography
               sx={{
                 fontSize: 14,
@@ -183,7 +386,7 @@ const page = () => {
               justifyContent: 'flex-start',
               gap: 1,
             }}>
-              <CheckCircleOutlineRoundedIcon/>
+              <CheckCircleIcon color="success"/>
               <Typography
               sx={{
                 fontSize: 14,
@@ -202,7 +405,7 @@ const page = () => {
               justifyContent: 'flex-start',
               gap: 1,
             }}>
-              <CheckCircleOutlineRoundedIcon/>
+              <CheckCircleIcon color="success"/>
               <Typography
               sx={{
                 fontSize: 14,
@@ -221,7 +424,7 @@ const page = () => {
               justifyContent: 'flex-start',
               gap: 1,
             }}>
-              <CheckCircleOutlineRoundedIcon/>
+              <CheckCircleIcon color="success"/>
               <Typography
               sx={{
                 fontSize: 14,
@@ -240,8 +443,15 @@ const page = () => {
               justifyContent: 'flex-start',
               gap: 1,
             }}>
-              <CancelOutlinedIcon/>
-              <Box>
+              <CancelIcon color="error"/>
+              {/* <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                gap: 1,
+              }}> */}
               <Typography
               sx={{
                 fontSize: 14,
@@ -255,6 +465,10 @@ const page = () => {
               </Link>
 
               </Box>
+              </Stack>
+              </Box>
+              </Box>
+
 
               <Box
               sx={{
@@ -263,49 +477,318 @@ const page = () => {
                 flexDirection: 'row',
                 justifyContent: 'flex-start',
                 gap: 1,
+                width: '100%',
               }}>
-                <Button variant="contained">Start New Campaign</Button>
-                <Button variant="contained">Connect Ad Accounts</Button>
-                <Button variant="contained">Upload Media Assets</Button>
+                <Button variant="contained"
+                startIcon={<EmojiFlagsIcon sx={{ color: 'dashIcons.main' }} />}
+                sx={{
+                  borderRadius: 4,
+                  height: 38,
+                  px: 2.5,
+                  py: 1.5,
+                  gap: 0.75,
+                }}
+                >
+                  <Typography
+                  sx={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: 'text.white',
+                    letterSpacing: 0,
+                    textTransform: 'none',
+                  }}
+                  >Start New Campaign</Typography>
+                </Button>
+
+                <Button variant="contained"
+                startIcon={<ShareIcon sx={{ color: 'dashIcons.main' }} />}
+                sx={{
+                  borderRadius: 4,
+                  height: 38,
+                  px: 2.5,
+                  py: 1.5,
+                  gap: 0.75,
+                }}>
+                  <Typography
+                    sx={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: 'text.white',
+                    letterSpacing: 0,
+                    textTransform: 'none',
+                  }}
+                  >Connect Ad Accounts</Typography>
+                </Button>
+                <Button variant="contained"
+                startIcon={<FileUploadIcon 
+                  sx={{
+                    color: 'dashboardText.white',
+                  }}
+                  />}
+                sx={{
+                  borderRadius: 4,
+                  height: 38,
+                  px: 2.5,
+                  py: 1.5,
+                  gap: 0.75,
+                }}>
+                  <Typography
+                    sx={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: 'text.white',
+                    letterSpacing: 0,
+                    textTransform: 'none',
+                  }}
+                  >Upload Media Assets</Typography>
+                </Button>
               </Box>
                           
-              <Box>
-                <Typography>KPI Summary</Typography>
-               <Paper>
-               <Image src="/overviewcontent.svg" alt="Logo" width={64} height={64} /> 
-               <Box>
-                <Box>
-                <Typography>Total Revenue</Typography>    
-                <InfoOutlineIcon/>            
-                </Box>
-                <Typography>$0.00</Typography>
-               </Box>
-               </Paper>
-               <Paper>
-               <Image src="/overviewcontent.svg" alt="Logo" width={64} height={64} /> 
-               <Box>
-                <Box>
-                <Typography>Total Revenue</Typography>    
-                <InfoOutlineIcon/>            
-                </Box>
-                <Typography>$0.00</Typography>
-               </Box>
-               </Paper>
-               <Paper>
-               <Image src="/overviewcontent.svg" alt="Logo" width={64} height={64} /> 
-               <Box>
-                <Box>
-                <Typography>Total Revenue</Typography>    
-                <InfoOutlineIcon/>            
-                </Box>
-                <Typography>$0.00</Typography>
-               </Box>
-               </Paper>
-              </Box>
+              <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                gap: 1,
+                width: '100%',
+              }}>
+                <Stack
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                  gap: 1,
+                  width: '100%',
+                }}>
+                <Typography              
+                sx={{
+                  fontSize: 18,
+                  fontWeight: 600,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                }}
+                >KPI Summary</Typography>
+                </Stack>
 
-            </Box>
-          
-          </Stack>
+                <Stack
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection:{xs:'column',sm:'row'},
+                  justifyContent: 'space-between',
+                  gap: 1,
+                  width: '100%',
+                }}>
+              <Paper
+               sx={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 flexDirection: 'row',
+                 justifyContent: 'flex-start',
+                 gap: 1.5,
+                 borderRadius: 2,
+                 px: 2.5,
+                 py: 1.75,
+                 border: '1px solid #0000001F',
+                 boxSizing: 'border-box',
+                 flex: 1,
+                 width: '100%',
+               }}>
+             
+                <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 1.5,
+                  px: 0.25,
+                  py: 0.5,
+                height: 64,
+                width: 64,
+                //background: "lighert.main",
+
+                backgroundColor: "lighert.main",
+                }}>
+                 <SummarizeIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>
+                </Box>
+               <Box
+                sx={{
+               
+                  width: '100%',
+                
+                 }}>
+                <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  gap: 1,
+                  width: '100%',
+                }}>
+                <Typography
+                sx={{
+                  fontSize: 16,
+                  fontWeight: 500,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >Total Revenue</Typography>    
+                <InfoOutlineIcon/>            
+                </Box>
+                <Typography
+                sx={{
+                  fontSize: 32,
+                  fontWeight: 600,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >$0.00</Typography>
+               </Box>
+               </Paper>
+               <Paper
+               sx={{
+                 display: 'flex',
+                 alignItems: 'center',
+                 flexDirection: 'row',
+                 justifyContent: 'flex-start',
+                 gap: 1.5,
+                 borderRadius: 2,
+                 px: 2.5,
+                 py: 1.75,
+                 border: '1px solid #0000001F',
+                 boxSizing: 'border-box',
+                 flex: 1,
+                 width: '100%',
+               }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 1.5,
+                  px: 0.25,
+                  py: 0.5,
+                height: 64,
+                width: 64,
+                //background: "lighert.main",
+
+                backgroundColor: "lighert.main",
+                }}>
+                 <PersonAddIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>
+                </Box>
+               <Box
+                sx={{
+               
+                  width: '100%',
+                
+                 }}>
+                <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  gap: 1,
+                  width: '100%',
+                }}>
+                <Typography
+                sx={{
+                  fontSize: 16,
+                  fontWeight: 500,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >New Clients This Month</Typography>    
+                <InfoOutlineIcon/>            
+                </Box>
+                <Typography
+                sx={{
+                  fontSize: 32,
+                  fontWeight: 600,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >0</Typography>
+               </Box>
+               </Paper>
+               <Paper
+               sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                gap: 1.5,
+                borderRadius: 2,
+                px: 2.5,
+                py: 1.75,
+                border: '1px solid #0000001F',
+                boxSizing: 'border-box',
+                flex: 1,
+               }}>
+                <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 1.5,
+                  px: 0.25,
+                  py: 0.5,
+                height: 64,
+                width: 64,
+                //background: "lighert.main",
+
+                backgroundColor: "lighert.main",
+                }}>
+                 <GroupsIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>
+                </Box>
+               <Box
+               sx={{
+               
+                width: '100%',
+              
+               }}>
+                <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                  gap: 1,
+                  borderRadius: 2,
+                               
+                  boxSizing: 'border-box',
+                }}>
+                <Typography
+                sx={{
+                  fontSize: 16,
+                  fontWeight: 500,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                  >Active Team Members</Typography>    
+                 <InfoOutlineIcon/>            
+                </Box>
+                <Typography
+                sx={{
+                  fontSize: 32,
+                  fontWeight: 600,
+                  color: 'text.primary',
+                  letterSpacing: 0,
+                  textTransform: 'none',
+                }}
+                >3</Typography>
+               </Box>
+               </Paper>
+              </Stack>
 
 
 
