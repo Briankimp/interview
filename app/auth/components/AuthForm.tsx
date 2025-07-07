@@ -74,13 +74,13 @@ export default function AuthForm() {
                 }}
               >
 
-                <InputField                
-                defaultValue="Email"
+                <InputField               
+                
                 placeholder="Email"               
                 />
 
                 <InputField                
-                    defaultValue="Password"
+                   
                     placeholder="Password" 
                      type={showPassword ? "text" : "password"}
                 InputProps={{
