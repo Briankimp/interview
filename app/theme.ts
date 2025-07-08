@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Palette {
-    dashboard: Palette['primary'];
+    dashboard: Palette["primary"];
     dashboardText: {
       primary: string;
       secondary: string;
@@ -13,13 +13,14 @@ declare module '@mui/material/styles' {
     };
     lighert: {
       main: string;
+      text: string;
     };
     dashIcons: {
       main: string;
     };
   }
   interface PaletteOptions {
-    dashboard?: PaletteOptions['primary'];
+    dashboard?: PaletteOptions["primary"];
     dashboardText?: {
       primary: string;
       secondary: string;
@@ -30,6 +31,7 @@ declare module '@mui/material/styles' {
     };
     lighert?: {
       main: string;
+      text: string;
     };
     dashIcons?: {
       main: string;
@@ -52,88 +54,87 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Poppins',
-    
+    fontFamily: "Poppins",
+
     h1: {
-      fontSize: '34px',
+      fontSize: "34px",
       fontWeight: 600,
-      textTransform: 'none',
+      textTransform: "none",
       lineHeight: 1.2,
-      color: 'text.primary',
-      
-      '@media (max-width: 599px)': {
-        fontSize: '32px',
+      color: "text.primary",
+
+      "@media (max-width: 599px)": {
+        fontSize: "32px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '28px',
+      "@media (max-width: 375px)": {
+        fontSize: "28px",
       },
     },
     h2: {
-      fontSize: '26px',
+      fontSize: "26px",
       fontWeight: 600,
       lineHeight: 1.3,
-      textTransform: 'none',
-      color: 'text.primary',
-      '@media (max-width: 599px)': {
-        fontSize: '24px',
+      textTransform: "none",
+      color: "text.primary",
+      "@media (max-width: 599px)": {
+        fontSize: "24px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '22px',
+      "@media (max-width: 375px)": {
+        fontSize: "22px",
       },
     },
     h3: {
-      fontSize: '24px',
+      fontSize: "24px",
       fontWeight: 600,
       lineHeight: 1.4,
-      textTransform: 'none',
-      color: 'text.primary',
-      '@media (max-width: 599px)': {
-        fontSize: '22px',
+      textTransform: "none",
+      color: "text.primary",
+      "@media (max-width: 599px)": {
+        fontSize: "22px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '20px',
+      "@media (max-width: 375px)": {
+        fontSize: "20px",
       },
     },
     h4: {
-      fontSize: '18px',
+      fontSize: "18px",
       fontWeight: 500,
-      textTransform: 'none',
+      textTransform: "none",
       lineHeight: 1.5,
-      color: 'text.primary',
-      '@media (max-width: 599px)': {
-        fontSize: '16px',
+      color: "text.primary",
+      "@media (max-width: 599px)": {
+        fontSize: "16px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '14px',
+      "@media (max-width: 375px)": {
+        fontSize: "14px",
       },
     },
     h5: {
-      fontSize: '14px',
+      fontSize: "14px",
       fontWeight: 400,
       lineHeight: 1.5,
-      textTransform: 'none',
-      color: 'text.primary',
-      '@media (max-width: 599px)': {
-        fontSize: '13px',
+      textTransform: "none",
+      color: "text.primary",
+      "@media (max-width: 599px)": {
+        fontSize: "13px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '12px',
+      "@media (max-width: 375px)": {
+        fontSize: "12px",
       },
     },
     h6: {
-      fontSize: '14px',
+      fontSize: "14px",
       fontWeight: 400,
       lineHeight: 1.5,
-      textTransform: 'none',
-      color: 'text.primary',
-      '@media (max-width: 599px)': {
-        fontSize: '12px',
+      textTransform: "none",
+      color: "text.primary",
+      "@media (max-width: 599px)": {
+        fontSize: "12px",
       },
-      '@media (max-width: 375px)': {
-        fontSize: '10px',
+      "@media (max-width: 375px)": {
+        fontSize: "10px",
       },
     },
-   
   },
   palette: {
     primary: {
@@ -171,6 +172,7 @@ export const theme = createTheme({
     },
     lighert: {
       main: "#F3E6F3",
+      text: '#7F7C86'
     },
     dashIcons: {
       main: "#FFFFFF",

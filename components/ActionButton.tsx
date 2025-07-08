@@ -1,10 +1,14 @@
-import { Button, Typography, styled } from '@mui/material';
-import { CheckCircleOutlineRounded, AddRounded, CancelOutlined } from '@mui/icons-material';
-import theme from '../theme';
+import { Button, Typography, styled } from "@mui/material";
+import {
+  CheckCircleOutlineRounded,
+  AddRounded,
+  CancelOutlined,
+} from "@mui/icons-material";
+import theme from "../app/theme";
 
 interface ActionButtonProps {
   text: string;
-  status?: 'success' | 'error' | 'action';
+  status?: "success" | "error" | "action";
   icon?: React.ReactNode;
   width?: number;
   onClick?: () => void;
@@ -12,47 +16,51 @@ interface ActionButtonProps {
 }
 
 const StyledButton = styled(Button, {
-  shouldForwardProp: (prop) => prop !== 'status' && prop !== 'width',
-})<{ status?: 'success' | 'error' | 'action'; width?: number }>(
+  shouldForwardProp: (prop) => prop !== "status" && prop !== "width",
+})<{ status?: "success" | "error" | "action"; width?: number }>(
   ({ theme, status, width }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     paddingTop: 1.25,
     paddingBottom: 1.25,
     paddingRight: 2.75,
     paddingLeft: 2.75,
     borderRadius: 20,
     height: 38,
-    width: width ?? (status === 'success' ? 149 : 118),
+    width: width ?? (status === "success" ? 149 : 118),
     backgroundColor:
-      status === 'success'
+      status === "success"
         ? theme.palette.success.main
-        : status === 'error'
+        : status === "error"
         ? theme.palette.error.main
         : theme.palette.primary.main,
-    '&:hover': {
+    "&:hover": {
       backgroundColor:
-        status === 'success'
+        status === "success"
           ? theme.palette.success.dark
-          : status === 'error'
+          : status === "error"
           ? theme.palette.error.dark
           : theme.palette.primary.dark,
     },
-    '&:disabled': {
+    "&:disabled": {
       opacity: 0.7,
-      cursor: 'not-allowed',
+      cursor: "not-allowed",
     },
   })
 );
 
-const ActionButton: React.FC<ActionButtonProps> = ({ 
-  text, 
-  status = 'action', 
-  icon = status === 'success' ? <CheckCircleOutlineRounded /> : 
-         status === 'error' ? <CancelOutlined /> : 
-         <AddRounded />,
-  width = status === 'success' ? 149 : 118,
+const ActionButton: React.FC<ActionButtonProps> = ({
+  text,
+  status = "action",
+  icon = status === "success" ? (
+    <CheckCircleOutlineRounded />
+  ) : status === "error" ? (
+    <CancelOutlined />
+  ) : (
+    <AddRounded />
+  ),
+  width = status === "success" ? 149 : 118,
   onClick,
   sx,
 }) => {

@@ -1,6 +1,6 @@
-import { TextField, MenuItem, styled } from '@mui/material';
-import { ArrowDropDown } from '@mui/icons-material';
-import theme from '../theme';
+import { TextField, MenuItem, styled } from "@mui/material";
+import { ArrowDropDown } from "@mui/icons-material";
+import theme from "../app/theme";
 
 interface SelectInputProps {
   placeholder: string;
@@ -13,31 +13,31 @@ interface SelectInputProps {
 }
 
 const StyledTextField = styled(TextField)({
-  '& .MuiOutlinedInput-root': {
+  "& .MuiOutlinedInput-root": {
     borderRadius: 36,
-    padding: '0 17px',
+    padding: "0 17px",
     height: 50,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     gap: 20,
     width: "100%",
     boxSizing: "border-box",
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
       maxWidth: 200,
-      padding: '0 14px',
+      padding: "0 14px",
       height: 40,
       boxSizing: "border-box",
     },
-    '&.Mui-focused fieldset': {
-      borderColor: 'primary.main',
+    "&.Mui-focused fieldset": {
+      borderColor: "primary.main",
     },
   },
-  '& .MuiOutlinedInput-input': {
-    padding: '0 8px',
-    [theme.breakpoints.down('sm')]: {
-      padding: '0 6px',
+  "& .MuiOutlinedInput-input": {
+    padding: "0 8px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 6px",
     },
   },
 });
@@ -48,15 +48,17 @@ const SelectInput: React.FC<SelectInputProps> = ({
   onChange,
   options,
   displayEmpty = true,
-  emptyLabel = 'Select an option',
+  emptyLabel = "Select an option",
   sx,
 }) => {
   return (
     <StyledTextField
-    fullWidth
+      fullWidth
       select
       value={value}
-      onChange={(event: { target: { value: string; }; }) => onChange(event.target.value)}
+      onChange={(event: { target: { value: string } }) =>
+        onChange(event.target.value)
+      }
       SelectProps={{
         IconComponent: ArrowDropDown,
         displayEmpty: true,
