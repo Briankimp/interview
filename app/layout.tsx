@@ -3,8 +3,8 @@ import MuiProvider from "./MuiProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Job Interview",
-  description: "Work",
+  title: "AdCodecs",
+  description: "brianmunene.verce.app",
 };
 
 export default function RootLayout({
