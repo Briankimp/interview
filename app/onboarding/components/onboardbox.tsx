@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import ArrowForward from '@mui/icons-material/ArrowForward'
 import Link from 'next/link'
+import ContinueButton from '@/app/components/ContinueButton'
 interface OnboardBoxProps {
   children: React.ReactNode;
   stepLabel?: string;
@@ -25,7 +26,6 @@ const OnboardBox = ({
   mainTitle = 'Onboarding',
   variant = 'contained',
   buttonText = 'CONTINUE',
-  height = 704,
 }: OnboardBoxProps) => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', position: 'relative' }}>
@@ -37,8 +37,7 @@ const OnboardBox = ({
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
-            alignItems: 'center',
-            height: height,
+            alignItems: 'center',           
             width: 1069,
             mx: 11,
             my: 11,
@@ -52,36 +51,31 @@ const OnboardBox = ({
 
         }}>
             <Box sx={{
-                display: 'flex',
+                display: 'flex',               
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: 1.25,
             }}>
-                <Typography sx={{
-                    fontSize: 34,
-                    fontWeight: 600,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>
+                <Typography 
+                variant="h1"
+                >
                     {mainTitle}
                 </Typography>
-                <Typography sx={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>
+                <Typography 
+                variant="h5"
+                
+                >
                     {stepLabel}
                 </Typography>
-                <Typography sx={{
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>{sectionTitle}</Typography>
-                <Typography>{subtitle}</Typography>
+                <Typography 
+                variant="h4"
+             
+                >{sectionTitle}
+                </Typography>
+                <Typography variant="h5">{subtitle}</Typography>
 
             </Box>
+            
             {children}
             
             <Box sx={{
@@ -92,29 +86,10 @@ const OnboardBox = ({
               
             }}> 
             <Link href={continueLink}>  
-            <Button variant={variant} endIcon={<ArrowForward/>}
-             sx={{
-                fontSize: 24,
-                pt: 2,
-                pb: 2,
-                pr: 12,
-                pl: 14,
-                borderRadius: 46,
-                gap: 2.5,
-                height: 64,
-                width: 396
-            }}>
-                <Typography sx={{
-                    fontSize: 18,
-                    fontWeight: 500,
-                    // width: 91,
-                    // height: 27,
-                    textAlign: "center",                    
-                    // display: "inline-block"
-                }}>
-                    {buttonText}
-                </Typography>
-            </Button>
+            <ContinueButton href={continueLink} variant={variant}>
+                {buttonText}
+            </ContinueButton>
+
             </Link>
             </Box>
             </Box>

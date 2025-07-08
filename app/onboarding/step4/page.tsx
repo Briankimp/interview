@@ -1,6 +1,7 @@
 import React from 'react'
 import OnboardBox from '../components/onboardbox'
-import { Typography, Box, Stack, Button} from '@mui/material'
+import { Typography, Box, Stack, Button } from '@mui/material'
+import StatusButton from '@/app/components/StatusButton'
 import Image from 'next/image'
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
@@ -106,7 +107,7 @@ const StepFour = () => {
                             gap: 1,
                         }}>
                         <Image src="/snapchat.svg" alt="Snapchat" width={28} height={28} />
-                        <Typography>Snapchat</Typography>
+                        <Typography variant="h5">Snapchat</Typography>
                         </Box>
                         <Button sx={{
                             display: 'flex',

@@ -30,7 +30,6 @@ const Stepp4 = () => {
             padding: 3,
             gap: 1.5,
             borderColor: 'primary.main',
-            // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
            
         }}>
             <Box 
@@ -42,24 +41,12 @@ const Stepp4 = () => {
                 justifyContent: 'center',
             }}>
             <Image src="/project.svg" alt="Create" width={150} height={138} />
-            <Typography
-            sx={{
-                fontSize: 18,
-                fontWeight: 700,
-                color: 'text.primary',
-                letterSpacing: 0,
-            }}>
+            <Typography variant="h3">
                 CREATE PROJECT
             </Typography>
-            <Typography
-            sx={{
-                fontSize: 14,
-                fontWeight: 400,
-                color: '#7F7C86',
-                letterSpacing: -1,
+            <Typography variant="h5" color="#7F7C86" textAlign="center" sx={{
                 height: 44,
                 width: 264,
-                textAlign: 'center',
                 lineHeight: "160%",
                 textTransform: 'none',
             }}>
@@ -78,12 +65,7 @@ const Stepp4 = () => {
                 gap: 2.5,
                
             }}>
-                <Typography sx={{
-                    fontSize: 18,
-                    fontWeight: 500,
-
-                   
-                }}>
+                <Typography variant="h4">
                     ADD PROJECT
                 </Typography>
             </Button>
