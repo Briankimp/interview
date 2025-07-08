@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import OnboardBox from "../components/onboardbox";
 import { Typography, Box, Stack, Button } from "@mui/material";
 import Image from "next/image";
-import ActionButton from "@/app/components/ActionButton";
+import ActionButton from "@/components/ActionButton";
 const StepThree = () => {
   const [status, setStatus] = useState<"action" | "success">("action");
   const [tiktokStatus, setTiktokStatus] = useState<"action" | "error">(
@@ -55,27 +55,40 @@ const StepThree = () => {
       subtitle="Connect your accounts to start running ads"
       sectionTitle="Link Account"
       mainTitle="Onboarding"
-
       variant="outlined"
       buttonText="SKIP FOR NOW"
     >
       <Box
         sx={{
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   alignItems: "center",
+        //   justifyContent: "center",
+        //   width: { md: "529", xs: "100%" },
+        //   border: "1px solid",
+        //   borderRadius: 2,
+        //   px: 5,
+        //   paddingTop: 5,
+        //   paddingBottom: 6.25,
+        //   gap: 2.75,
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-     
+          height: { md: 450, xs: "100%" },
+          width: { md: 529, xs: "100%" },
           border: "1px solid",
           borderRadius: 2,
-          px: 5,
-          paddingTop: 5,
-          paddingBottom: 6.25,
-          gap: 2.75,
-          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+          px: { md: 5, xs: 2 },
+          paddingTop: { md: 5, xs: 2 },
+          paddingBottom: 5,
+          gap: 2,
+          boxSizing: "border-box",
         }}
       >
         <Typography
+          variant="h4"
           sx={{
             fontSize: 18,
             fontWeight: 600,
@@ -99,8 +112,8 @@ const StepThree = () => {
             label="Facebook"
             status={status}
             onClick={() => {
-                if (status === "action") setStatus("success");
-              }}
+              if (status === "action") setStatus("success");
+            }}
           />
 
           <PlatformRow

@@ -11,9 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
-import InputField from "@/app/components/InputField";
-import SelectInput from "@/app/components/SelectInput";
-import TextAreaInput from "@/app/components/TextAreaInput";
+import InputField from "@/components/InputField";
+import SelectInput from "@/components/SelectInput";
+import TextAreaInput from "@/components/TextAreaInput";
 
 const StepTwo = () => {
   const industries = [

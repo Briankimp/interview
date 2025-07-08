@@ -1,39 +1,39 @@
-import { TextField, styled } from '@mui/material';
-import theme from '../theme';
+import { TextField, styled } from "@mui/material";
+import theme from "../app/theme";
 
 interface InputFieldProps {
   label?: string;
   defaultValue?: string;
   placeholder?: string;
   fullWidth?: boolean;
-  type?: 'text' | 'email' | 'password';
+  type?: "text" | "email" | "password";
   InputProps?: any;
   sx?: any;
 }
 
 const StyledTextField = styled(TextField)({
-  '& .MuiOutlinedInput-root': {
+  "& .MuiOutlinedInput-root": {
     borderRadius: 36,
-    padding: '0 17px',
+    padding: "0 17px",
     height: 50,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     gap: 20,
-    width: '100%',
+    width: "100%",
     boxSizing: "border-box",
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
       height: 40,
     },
-    '&.Mui-focused fieldset': {
-      borderColor: 'primary.main',
+    "&.Mui-focused fieldset": {
+      borderColor: "primary.main",
     },
   },
-  '& .MuiOutlinedInput-input': {
-    padding: '0 8px',
-    [theme.breakpoints.down('sm')]: {
-      padding: '0 6px',
+  "& .MuiOutlinedInput-input": {
+    padding: "0 8px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 6px",
     },
   },
 });
@@ -43,7 +43,7 @@ const InputField: React.FC<InputFieldProps> = ({
   defaultValue,
   placeholder,
   fullWidth = true,
-  type = 'text',
+  type = "text",
   InputProps,
   sx,
   ...props

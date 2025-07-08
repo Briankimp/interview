@@ -1,25 +1,31 @@
-import { Button, Typography, Box, styled } from '@mui/material';
-import { ArrowForward } from '@mui/icons-material';
-import Link from 'next/link';
-import theme from '../theme';
+import { Button, Typography, Box, styled } from "@mui/material";
+import { ArrowForward } from "@mui/icons-material";
+import Link from "next/link";
+import theme from "../app/theme";
 
 interface ContinueButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: 'contained' | 'outlined' | 'text';
+  variant?: "contained" | "outlined" | "text";
 }
 
-const StyledButton = styled(Button)<{ variant?: 'contained' | 'outlined' | 'text' }>({
-  '&:hover': {
-              backgroundColor: theme.palette.primary.dark,
-            },
-})
-const ContinueButton: React.FC<ContinueButtonProps> = ({ href, children, variant }) => {
+const StyledButton = styled(Button)<{
+  variant?: "contained" | "outlined" | "text";
+}>({
+  "&:hover": {
+    backgroundColor: theme.palette.primary.dark,
+  },
+});
+const ContinueButton: React.FC<ContinueButtonProps> = ({
+  href,
+  children,
+  variant,
+}) => {
   return (
     <Link href={href} passHref>
-      <Box component="a" style={{ textDecoration: 'none' }}>
+      <Box component="a" style={{ textDecoration: "none" }}>
         <StyledButton
-        fullWidth
+          fullWidth
           variant={variant}
           endIcon={<ArrowForward sx={{ fontSize: 24 }} />}
           color="primary"
@@ -30,8 +36,8 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({ href, children, variant
             paddingLeft: { xs: 12, md: 14 },
             borderRadius: 46,
             gap: { xs: 2, md: 2.5 },
-            height: { xs: 56, md: 64 },           
-            '& .MuiButton-endIcon': {
+            height: { xs: 56, md: 64 },
+            "& .MuiButton-endIcon": {
               fontSize: { xs: 20, md: 24 },
               boxSizing: "border-box",
             },
