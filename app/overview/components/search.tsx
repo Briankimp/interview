@@ -11,7 +11,7 @@ const Search = () => {
     width: 337,
     height: 44,
     '& .MuiOutlinedInput-root': {
-      borderRadius: '30px', // full-rounded look
+      borderRadius: '30px', 
       paddingRight: 1,
     },
     '& .MuiOutlinedInput-input': {

@@ -83,13 +83,7 @@ const Sidebar = () => {
   ]
 
   return (
-    <Box
-    // sx={{
-    //   display: 'flex',
-    //   flexDirection: 'row',
-
-    // }}
-    >
+    <Box>
     <Box sx={{ 
       backgroundColor: 'dashboard.main',
       display: 'flex', 

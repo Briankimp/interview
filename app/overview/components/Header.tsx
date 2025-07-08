@@ -23,8 +23,6 @@ const Header = () => {
       position: 'sticky',
       top: 0,
       boxSizing: 'border-box',
-     // zIndex: 1000,
-     // m:-3,
     }}
   >
     <Search />

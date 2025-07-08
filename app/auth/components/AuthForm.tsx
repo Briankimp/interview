@@ -71,6 +71,7 @@ export default function AuthForm() {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
+                  width: "100%",
                 }}
               >
 
@@ -101,7 +102,7 @@ export default function AuthForm() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  width: {md:396, sm:200},
+                  width: "100%",
                 }}
               >
                 <FormControlLabel
@@ -111,7 +112,7 @@ export default function AuthForm() {
                   label={<Typography fontSize={14}>Remember me</Typography>}
                 />
                 <Typography
-                  fontSize={14}
+                 variant="h5"
                   color="primary"
                   sx={{ cursor: "pointer", fontWeight: 600 }}
                 >
@@ -121,6 +122,7 @@ export default function AuthForm() {
 
              
                   <ContinueButton
+
                   variant="contained" 
                   href="/onboarding/step1"
                   >CONTINUE</ContinueButton>  
@@ -158,7 +160,7 @@ export default function AuthForm() {
                   textTransform: "none",
                   borderRadius: 46,
                   height: {sm:50, md:61},
-                  width: {md:396, sm:200},
+                  // width: {md:396, sm:200},
                   boxSizing: "border-box",
                 }}
               >

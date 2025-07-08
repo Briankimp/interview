@@ -53,11 +53,14 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: 'Poppins',
+    
     h1: {
       fontSize: '34px',
       fontWeight: 600,
       textTransform: 'none',
       lineHeight: 1.2,
+      color: 'text.primary',
+      
       '@media (max-width: 599px)': {
         fontSize: '32px',
       },
@@ -70,6 +73,7 @@ export const theme = createTheme({
       fontWeight: 600,
       lineHeight: 1.3,
       textTransform: 'none',
+      color: 'text.primary',
       '@media (max-width: 599px)': {
         fontSize: '24px',
       },
@@ -82,6 +86,7 @@ export const theme = createTheme({
       fontWeight: 600,
       lineHeight: 1.4,
       textTransform: 'none',
+      color: 'text.primary',
       '@media (max-width: 599px)': {
         fontSize: '22px',
       },
@@ -94,6 +99,7 @@ export const theme = createTheme({
       fontWeight: 500,
       textTransform: 'none',
       lineHeight: 1.5,
+      color: 'text.primary',
       '@media (max-width: 599px)': {
         fontSize: '16px',
       },
@@ -106,6 +112,7 @@ export const theme = createTheme({
       fontWeight: 400,
       lineHeight: 1.5,
       textTransform: 'none',
+      color: 'text.primary',
       '@media (max-width: 599px)': {
         fontSize: '13px',
       },
@@ -118,6 +125,7 @@ export const theme = createTheme({
       fontWeight: 400,
       lineHeight: 1.5,
       textTransform: 'none',
+      color: 'text.primary',
       '@media (max-width: 599px)': {
         fontSize: '12px',
       },

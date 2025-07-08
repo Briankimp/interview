@@ -26,7 +26,6 @@ const OnboardBox = ({
   mainTitle = 'Onboarding',
   variant = 'contained',
   buttonText = 'CONTINUE',
-  height = 704,
 }: OnboardBoxProps) => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', position: 'relative' }}>
@@ -38,8 +37,7 @@ const OnboardBox = ({
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
-            alignItems: 'center',
-            height: height,
+            alignItems: 'center',           
             width: 1069,
             mx: 11,
             my: 11,
@@ -53,36 +51,31 @@ const OnboardBox = ({
 
         }}>
             <Box sx={{
-                display: 'flex',
+                display: 'flex',               
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: 1.25,
             }}>
-                <Typography sx={{
-                    fontSize: 34,
-                    fontWeight: 600,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>
+                <Typography 
+                variant="h1"
+                >
                     {mainTitle}
                 </Typography>
-                <Typography sx={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>
+                <Typography 
+                variant="h5"
+                
+                >
                     {stepLabel}
                 </Typography>
-                <Typography sx={{
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: 'text.primary',
-                    letterSpacing: 0,
-                }}>{sectionTitle}</Typography>
-                <Typography>{subtitle}</Typography>
+                <Typography 
+                variant="h4"
+             
+                >{sectionTitle}
+                </Typography>
+                <Typography variant="h5">{subtitle}</Typography>
 
             </Box>
+            
             {children}
             
             <Box sx={{

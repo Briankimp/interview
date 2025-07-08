@@ -11,7 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
-
+import InputField from "@/app/components/InputField";
+import SelectInput from "@/app/components/SelectInput";
+import TextAreaInput from "@/app/components/TextAreaInput";
 
 const StepTwo = () => {
   const industries = [
@@ -42,7 +44,6 @@ const StepTwo = () => {
       sectionTitle="COMPANY INFO"
       mainTitle="Onboarding"
       buttonText="CONTINUE"
-      height={920}
     >
       <Box
         sx={{
@@ -50,156 +51,64 @@ const StepTwo = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: 536,
-          width: 529,
+          height: { md: 450, xs: "100%" },
+          width: { md: 529, xs: "100%" },
           border: "1px solid",
           borderRadius: 2,
-          px: 5,
-          paddingTop: 5,
-          paddingBottom: 6.25,
-          gap: 2.75,
-        
+          px: { md: 5, xs: 2 },
+          paddingTop: { md: 5, xs: 2 },
+          paddingBottom: 5,
+          gap: 2,
+          boxSizing: "border-box",
         }}
       >
-        <TextField
-          
-          variant="outlined"
-          margin="normal"
-          placeholder="Business Name"
-          InputProps={{
-            sx: {
-              borderRadius: 36,
-              px: 2.125,
-              py: 3.75,
-              width: 449,
-              height: 61,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1.25,
-              border: "1px solid",
-            },
-          }}
-        />
-
-        <TextField
-          select
-          
-          variant="outlined"
-          margin="normal"
-          placeholder="Select Your Industry"         
-          value={industry}
-          onChange={(event) => setIndustry(event.target.value)}
-          SelectProps={{
-            IconComponent: ArrowDropDown,
-            displayEmpty: true,
-          }}
-          InputProps={{
-            sx: {
-              borderRadius: 36,
-              px: 2.125,
-              py: 3.75,
-              width: 449,
-              height: 61,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1.25,
-              border: "1px solid",
-            },
-            
+        <Box
+          sx={{
+            width: { md: 449, xs: "100%" },
+            height: 60,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <MenuItem value="" disabled sx={{}}>
-            Select Your Industry
-          </MenuItem>
-          {industries.map((option) => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          multiline
-          rows={4}
-          
-          variant="outlined"
-          margin="normal"
-          placeholder="Description of Products/Services"
-          InputProps={{
-            sx: {
-              borderRadius: 2,
-              px: 2.125,
-              py: 3.75,
-              width: 449,
-              height: 126,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1.25,
-              border: "1px solid",
-            },
-          }}
-        />
-      <TextField
-  select
-  variant="outlined"
-  margin="normal"
-  value={audience}
-  onChange={(event) => setAudience(event.target.value)}
-  SelectProps={{
-    IconComponent: ArrowDropDown,
-    displayEmpty: true, 
-  }}
-  InputProps={{
-    sx: {
-      borderRadius: 36,
-      px: 2.125,
-      py: 3.75,
-      width: 449,
-      height: 61,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 1.25,
-      border: "1px solid",
-    },
-  }}
->
-  <MenuItem value="" disabled>
-    Select Your Audience
-  </MenuItem>
-  {audiences.map((option) => (
-    <MenuItem key={option} value={option}>
-      {option}
-    </MenuItem>
-  ))}
-</TextField>
+          <InputField placeholder="Business Name" />
+        </Box>
 
-        <TextField
-          
-          variant="outlined"
-          margin="normal"
-          placeholder="Website URL"
-          InputProps={{
-            sx: {
-              borderRadius: 36,
-              px: 2.125,
-              py: 3.75,
-              width: 449,
-              height: 61,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1.25,
-              border: "1px solid",
-            },
-          }}
+        <SelectInput
+          placeholder="Select Your Industry"
+          value={industry}
+          onChange={(value) => setIndustry(value)}
+          options={industries}
+          emptyLabel="Select Your Industry"
         />
+        <TextAreaInput
+          placeholder="Description of Products/Services"
+          rows={3}
+        />
+
+        <SelectInput
+          placeholder="Select Your Audience"
+          value={audience}
+          onChange={(value) => setAudience(value)}
+          options={audiences}
+          emptyLabel="Select Your Audience"
+        />
+
+        <Box
+          sx={{
+            width: { md: 449, xs: "100%" },
+            height: 50,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          <InputField placeholder="Website URL" />
+        </Box>
       </Box>
     </OnboardBox>
   );
 };
 
 export default StepTwo;
-

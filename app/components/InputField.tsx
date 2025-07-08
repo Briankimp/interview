@@ -15,17 +15,16 @@ const StyledTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
     borderRadius: 36,
     padding: '0 17px',
-    height: 61,
+    height: 50,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 20,
-    width: 396,
+    width: '100%',
+    boxSizing: "border-box",
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-      maxWidth: 320,
-      padding: '0 14px',
-      height: 48,
+      height: 40,
     },
     '&.Mui-focused fieldset': {
       borderColor: 'primary.main',

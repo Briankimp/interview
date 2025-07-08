@@ -19,6 +19,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({ href, children, variant
     <Link href={href} passHref>
       <Box component="a" style={{ textDecoration: 'none' }}>
         <StyledButton
+        fullWidth
           variant={variant}
           endIcon={<ArrowForward sx={{ fontSize: 24 }} />}
           color="primary"
@@ -29,8 +30,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({ href, children, variant
             paddingLeft: { xs: 12, md: 14 },
             borderRadius: 46,
             gap: { xs: 2, md: 2.5 },
-            height: { xs: 56, md: 64 },
-            width: { xs: 200, md: 396 },            
+            height: { xs: 56, md: 64 },           
             '& .MuiButton-endIcon': {
               fontSize: { xs: 20, md: 24 },
               boxSizing: "border-box",
@@ -42,7 +42,6 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({ href, children, variant
             sx={{
               color: "text.main",
               display: "inline-block",
-              minWidth: { sm: 80, md: 91 },
               textAlign: "center",
               fontWeight: 500,
               fontSize: { sm: 16, md: 18 },

@@ -11,7 +11,6 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import Link from 'next/link';
 import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
@@ -40,8 +39,7 @@ const page = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         gap: { xs: 1, sm: 1.5 },
-        //width: { xs: '100%', sm: '95%', md: '100%', lg: '85%' },
-        //maxWidth: { xs: '100%', sm: '600px', md: '800px', lg: '1200px' },
+       
         mx: { xs: 1, sm: 2, md: 3, lg: 4 },
 
         overflowY: { xs: 'auto', md: 'visible' },
@@ -139,7 +137,6 @@ const page = () => {
          alignItems: 'center',
           justifyContent: 'flex-start',
             width: '100%',
-            //height: 150,
             borderRadius: 2,
             border: '1px solid',
             gap: 4,
@@ -198,7 +195,6 @@ const page = () => {
               alignItems: 'center',
               flexDirection: 'column',
               justifyContent: 'center',
-              //height: 436,
               boxSizing: 'border-box',
               width: '100%',
               ml:0.5,
@@ -207,7 +203,6 @@ const page = () => {
               gap:1.5,
               borderRadius:2,
               border: '1px solid ',
-             // boxShadow: '1px 1px 1px 1px rgba(0.25, 0.25, 0.25, 0.25)',
             }}>
 
           <Box
@@ -243,12 +238,12 @@ const page = () => {
           <Box
           sx={{
             display: 'flex',
-            //alignItems: 'center',
+           
             flexDirection: 'column',
             justifyContent: 'flex-start',
             gap: 2.5,
             width: '100%',
-            //height: 49,
+           
 
           }}>
           <Typography
@@ -398,14 +393,7 @@ const page = () => {
               gap: 1,
             }}>
               <CancelIcon color="error"/>
-              {/* <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                gap: 1,
-              }}> */}
+            
               <Typography
               sx={{
                 fontSize: 14,
@@ -691,76 +679,7 @@ const page = () => {
                 }}
                 >0</Typography>
                </Box>
-               </Paper>
-               {/* <Paper
-               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                gap: 1.5,
-                borderRadius: 2,
-                px: 2.5,
-                py: 1.75,
-                border: '1px solid #0000001F',
-                boxSizing: 'border-box',
-                flex: 1,
-               }}>
-                <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: 1.5,
-                  px: 0.25,
-                  py: 0.5,
-                height: 64,
-                width: 64,
-
-                backgroundColor: "lighert.main",
-                }}>
-                 <GroupsIcon sx={{ color: 'primary.main', height: 30, width: 30 }}/>
-                </Box>
-               <Box
-               sx={{
-               
-                width: '100%',
-              
-               }}>
-                <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  width: '100%',
-                  gap: 1,
-                  borderRadius: 2,
-                               
-                  boxSizing: 'border-box',
-                }}>
-                <Typography
-                sx={{
-                  fontSize: 16,
-                  fontWeight: 500,
-                  color: 'text.primary',
-                  letterSpacing: 0,
-                  textTransform: 'none',
-                }}
-                  >Active Team Members</Typography>    
-                 <InfoOutlineIcon/>            
-                </Box>
-                <Typography
-                sx={{
-                  fontSize: 32,
-                  fontWeight: 600,
-                  color: 'text.primary',
-                  letterSpacing: 0,
-                  textTransform: 'none',
-                }}
-                >3</Typography>
-               </Box>
-               </Paper> */}
+               </Paper>             
               </Stack>
 
 
