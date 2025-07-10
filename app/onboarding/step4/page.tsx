@@ -8,7 +8,7 @@ const Stepp4 = () => {
   return (
     <OnboardBox
       stepLabel="STEP 4 OF 4"
-      continueLink="/onboarding/step4"
+      continueLink="/overview"
       subtitle="Create your first project to organize your clients and campaigns"
       sectionTitle="Create First Project"
       mainTitle="Onboarding"
@@ -28,7 +28,7 @@ const Stepp4 = () => {
           borderRadius: 2,
           padding: 3,
           gap: 1.5,
-          borderColor: "primary.main",
+          borderColor: "lighert.main",
         }}
       >
         <Box
