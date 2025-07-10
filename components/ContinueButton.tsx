@@ -31,10 +31,8 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
           color="primary"
           sx={{
             fullWidth: true,
-            paddingTop: 2,
-            paddingBottom: 2,
-            paddingRight: { xs: 12, md: 16 },
-            paddingLeft: { xs: 12, md: 16 },
+            py:{md:2, xs:1, sm:1},
+            px: { xs: 8, sm:12, md: 16 },
             borderRadius: 46,
             gap: { xs: 2, md: 2.5 },
            // height: { xs: 56, md: 64 },
@@ -50,7 +48,6 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
             sx={{
               width: "100%",
               color: "text.main",
-             // display: "inline-block",
               textAlign: "center",
               fontWeight: 500,
               fontSize: { xs: 12, sm: 16, md: 18 },

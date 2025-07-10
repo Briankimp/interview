@@ -64,17 +64,9 @@ const StepTwo = () => {
           boxSizing: "border-box",
         }}
       >
-        {/* <Box
-          sx={{
-            width: { md: 449, xs: "100%" },
-            height: 60,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        > */}
+      
           <InputField placeholder="Business Name" />
-        {/* </Box> */}
+
 
         <SelectInput
           placeholder="Select Your Industry"

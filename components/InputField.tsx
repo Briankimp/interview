@@ -23,9 +23,9 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       width: "100%",
-      maxWidth: 200,
+      maxWidth: 100,
       padding: "6px 14px",
-      height: 15,
+      height: 10,
       boxSizing: "border-box",
     },
     "&.Mui-focused fieldset": {

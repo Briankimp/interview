@@ -25,7 +25,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       width: "100%",
-      maxWidth: 200,
+      maxWidth: 50,
       padding: "6px 14px",
       height: {md:61, xs:40},
       boxSizing: "border-box",
@@ -42,6 +42,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
   "& .MuiOutlinedInput-input::placeholder": {
     color: theme.palette.text.secondary,
+    
   },
 }));
 

@@ -14,7 +14,7 @@ const Stepp4 = () => {
       mainTitle="Onboarding"
       variant="outlined"
       buttonText="SKIP FOR NOW"
-      height={769}
+     // height={769}
     >
       <Box
         sx={{
@@ -23,7 +23,7 @@ const Stepp4 = () => {
           alignItems: "center",
           justifyContent: "center",
           height: 385,
-          width: 312,
+          width: {md:312, xs:264},
           border: "1px solid",
           borderRadius: 2,
           padding: 3,

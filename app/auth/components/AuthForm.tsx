@@ -179,13 +179,7 @@ export default function AuthForm() {
             position: "relative",
           }}
         >
-          <Image
-            src="/image.png"
-            alt="Auth"
-            fill
-            objectFit="contain"
-            
-          />
+  
           {/* <Box textAlign="center" color="white" maxWidth={400} px={2}> */}
         </Box>
       </Box>
