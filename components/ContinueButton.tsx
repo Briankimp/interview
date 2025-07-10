@@ -30,22 +30,25 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
           endIcon={<ArrowForward sx={{ fontSize: 24 }} />}
           color="primary"
           sx={{
+            fullWidth: true,
             paddingTop: 2,
             paddingBottom: 2,
-            paddingRight: { xs: 12, md: 14 },
-            paddingLeft: { xs: 12, md: 14 },
+            paddingRight: { xs: 12, md: 16 },
+            paddingLeft: { xs: 12, md: 16 },
             borderRadius: 46,
             gap: { xs: 2, md: 2.5 },
-            height: { xs: 56, md: 64 },
+           // height: { xs: 56, md: 64 },
             "& .MuiButton-endIcon": {
               fontSize: { xs: 20, md: 24 },
               boxSizing: "border-box",
             },
+            boxSizing: "border-box",
           }}
         >
           <Typography
             variant="h4"
             sx={{
+              width: "100%",
               color: "text.main",
               display: "inline-block",
               textAlign: "center",

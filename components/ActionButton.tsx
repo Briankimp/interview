@@ -1,4 +1,4 @@
-import { Button, Typography, styled } from "@mui/material";
+import { Box, Button, Typography, styled } from "@mui/material";
 import {
   CheckCircleOutlineRounded,
   AddRounded,
@@ -22,10 +22,8 @@ const StyledButton = styled(Button, {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 1.25,
-    paddingBottom: 1.25,
-    paddingRight: 2.75,
-    paddingLeft: 2.75,
+    py: 2,
+    px: 3,
     borderRadius: 20,
     height: 38,
     width: width ?? (status === "success" ? 149 : 118),
@@ -56,24 +54,27 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   icon = status === "success" ? (
     <CheckCircleOutlineRounded />
   ) : status === "error" ? (
-    <CancelOutlined />
+    <CancelOutlined  />
   ) : (
     <AddRounded />
   ),
-  width = status === "success" ? 149 : 118,
+  width = status === "success" ? {md:149, xs:118} : {md:118, xs:100},
   onClick,
   sx,
 }) => {
   return (
     <StyledButton
       variant="contained"
-      startIcon={icon}
+      //startIcon={icon}
       status={status}
       width={width}
       onClick={onClick}
       sx={sx}
     >
-      <Typography variant="h4" color="white">
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 , height: 10 , width: 10}}>
+        {icon}
+      </Box>
+      <Typography variant="h5" color="white">
         {text}
       </Typography>
     </StyledButton>

@@ -1,5 +1,4 @@
 import { TextField, styled } from "@mui/material";
-import theme from "../app/theme";
 
 interface InputFieldProps {
   label?: string;
@@ -11,32 +10,38 @@ interface InputFieldProps {
   sx?: any;
 }
 
-const StyledTextField = styled(TextField)({
+const StyledTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
     borderRadius: 36,
-    padding: "0 17px",
-    height: 50,
+    padding: "6px 17px",
+    height: {md:61, xs:15},
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: 20,
+    //gap: {md:10, xs:6},
     width: "100%",
     boxSizing: "border-box",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       width: "100%",
-      height: 40,
+      maxWidth: 200,
+      padding: "6px 14px",
+      height: 15,
+      boxSizing: "border-box",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "primary.main",
+      borderColor: "border.main",
     },
   },
   "& .MuiOutlinedInput-input": {
-    padding: "0 8px",
-    [theme.breakpoints.down("sm")]: {
-      padding: "0 6px",
+    padding: "6px 8px",
+    [theme.breakpoints.down("xs")]: {
+      padding: "6px 6px",
     },
   },
-});
+  "& .MuiOutlinedInput-input::placeholder": {
+    color: theme.palette.text.secondary,
+  },
+}));
 
 const InputField: React.FC<InputFieldProps> = ({
   label,

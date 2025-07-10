@@ -53,16 +53,18 @@ const StepTwo = () => {
           justifyContent: "center",
           height: { md: 450, xs: "100%" },
           width: { md: 529, xs: "100%" },
-          border: "1px solid",
+          borderColor: "lighert.main",
+          borderWidth: 1,
+          borderStyle: "solid",
           borderRadius: 2,
-          px: { md: 5, xs: 2 },
-          paddingTop: { md: 5, xs: 2 },
+          px: { md: 5, xs: 1.5 },
+          paddingTop: { md: 3, xs: 2 },
           paddingBottom: 5,
-          gap: 2,
+          gap: {md:2, xs:1},
           boxSizing: "border-box",
         }}
       >
-        <Box
+        {/* <Box
           sx={{
             width: { md: 449, xs: "100%" },
             height: 60,
@@ -70,9 +72,9 @@ const StepTwo = () => {
             alignItems: "center",
             justifyContent: "center",
           }}
-        >
+        > */}
           <InputField placeholder="Business Name" />
-        </Box>
+        {/* </Box> */}
 
         <SelectInput
           placeholder="Select Your Industry"
@@ -87,25 +89,16 @@ const StepTwo = () => {
         />
 
         <SelectInput
-          placeholder="Select Your Audience"
+          placeholder="Who is your primary audience?"
           value={audience}
           onChange={(value) => setAudience(value)}
           options={audiences}
-          emptyLabel="Select Your Audience"
+          emptyLabel="Who is your primary audience?"
         />
 
-        <Box
-          sx={{
-            width: { md: 449, xs: "100%" },
-            height: 50,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            boxSizing: "border-box",
-          }}
-        >
+       
           <InputField placeholder="Website URL" />
-        </Box>
+        
       </Box>
     </OnboardBox>
   );

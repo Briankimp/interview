@@ -33,7 +33,9 @@ const StepOne = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            border: "1px solid",
+            borderColor: "lighert.main",
+            borderWidth: 1,
+            borderStyle: "solid",
             borderRadius: 2,
             height: { xs: "auto", sm: 320 },
             p: { xs: 2, sm: 3 },
@@ -73,13 +75,13 @@ const StepOne = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            border: "1px solid",
+            borderColor: "lighert.main",
+            borderWidth: 1,
+            borderStyle: "solid",
             borderRadius: 2,
             height: { xs: "auto", sm: 320 },
-
             p: { xs: 2, sm: 3 },
             gap: { xs: 1, sm: 1.5 },
-
             boxSizing: "border-box",
           }}
         >
@@ -117,7 +119,9 @@ const StepOne = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            border: "1px solid",
+            borderColor: "lighert.main",
+            borderWidth: 1,
+            borderStyle: "solid",
             borderRadius: 2,
             height: { xs: "auto", sm: 320 },
             p: { xs: 2, sm: 3 },

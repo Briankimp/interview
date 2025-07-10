@@ -39,7 +39,7 @@ const StepThree = () => {
         }}
       >
         <Image src={iconSrc} alt={label} width={28} height={28} />
-        <Typography>{label}</Typography>
+        <Typography variant="h4" sx={{ fontSize: 16 }}>{label}</Typography>
       </Box>
       <ActionButton
         text={status === "action" ? "Connect" : "Connected"}
@@ -59,27 +59,17 @@ const StepThree = () => {
       buttonText="SKIP FOR NOW"
     >
       <Box
-        sx={{
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        //   justifyContent: "center",
-        //   width: { md: "529", xs: "100%" },
-        //   border: "1px solid",
-        //   borderRadius: 2,
-        //   px: 5,
-        //   paddingTop: 5,
-        //   paddingBottom: 6.25,
-        //   gap: 2.75,
-          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        sx={{          
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           height: { md: 450, xs: "100%" },
           width: { md: 529, xs: "100%" },
-          border: "1px solid",
           borderRadius: 2,
+          borderColor: "lighter.main",
+          borderWidth: 1,
+          borderStyle: "solid",
           px: { md: 5, xs: 2 },
           paddingTop: { md: 5, xs: 2 },
           paddingBottom: 5,

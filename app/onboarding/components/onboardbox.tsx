@@ -35,9 +35,11 @@ const OnboardBox = ({
         alignItems: "center",
         height: "100vh",
         position: "relative",
+        boxSizing: "border-box",
       }}
     >
-      <Box sx={{ position: "absolute", top: 33, left: 33 }}>
+      <Box
+       sx={{ position: "absolute", top: {md:33, xs:10, sm:10, lg:33}, left: {md:33, xs:10, sm:10, lg:33} }}>
         <Image src="/logo.svg" alt="Logo" width={171} height={44} />
       </Box>
       <Box
@@ -47,15 +49,20 @@ const OnboardBox = ({
           flexDirection: "column",
           alignItems: "center",
           width: 1069,
-          mx: 11,
-          my: 11,
-          paddingTop: 5,
-          paddingBottom: 6.25,
-          paddingLeft: 5,
-          paddingRight: 5,
+          m: {md:11, xs:11, sm:10, lg:11},
+          marginTop:{md:0, xs:11, sm:10, lg:11},
+          // paddingTop: 5,
+          // paddingBottom: 6.25,
+          // paddingLeft: 5,
+          // paddingRight: 5
+          // p-5,
+          p:{md:5, xs:2},
           gap: 5,
-          border: "1px solid",
+          borderColor: "lighert.main",
+          borderWidth: 1,
+          borderStyle: "solid",
           borderRadius: 2,
+          boxSizing: {md:"border-box", xs:"border-box"},
         }}
       >
         <Box
@@ -63,14 +70,21 @@ const OnboardBox = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 1.25,
+            gap:1.25,
             width: "100%",
+            boxSizing: {md:"border-box", xs:"border-box"},
           }}
         >
-          <Typography variant="h1" color="text.primary">{mainTitle}</Typography>
-<Typography variant="h5" color="text.primary">{stepLabel}</Typography>
-<Typography variant="h4" color="text.primary">{sectionTitle}</Typography>
-<Typography variant="h5" color="text.primary">{subtitle}</Typography>
+          <Typography variant="h1" sx={{
+            
+          }} color="text.secondary">{mainTitle}</Typography>
+          <Typography variant="h5" color="text.secondary">{stepLabel}</Typography>
+          <Typography variant="h4" color="text.primary" sx={{
+            fontWeight: 700,
+          }}>{sectionTitle}</Typography>
+          <Typography variant="h5" sx={{
+            fontWeight: 400,
+          }} color="text.secondary">{subtitle}</Typography>
         </Box>
 
         {children}
