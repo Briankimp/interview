@@ -50,10 +50,10 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
             sx={{
               width: "100%",
               color: "text.main",
-              display: "inline-block",
+             // display: "inline-block",
               textAlign: "center",
               fontWeight: 500,
-              fontSize: { sm: 16, md: 18 },
+              fontSize: { xs: 12, sm: 16, md: 18 },
             }}
           >
             {children}

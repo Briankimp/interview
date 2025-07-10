@@ -67,7 +67,7 @@ const StepThree = () => {
           height: { md: 450, xs: "100%" },
           width: { md: 529, xs: "100%" },
           borderRadius: 2,
-          borderColor: "lighter.main",
+          borderColor: "lighert.main",
           borderWidth: 1,
           borderStyle: "solid",
           px: { md: 5, xs: 2 },

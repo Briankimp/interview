@@ -62,7 +62,7 @@ const OnboardBox = ({
           borderWidth: 1,
           borderStyle: "solid",
           borderRadius: 2,
-          boxSizing: {md:"border-box", xs:"border-box"},
+          boxSizing: "border-box",
         }}
       >
         <Box
@@ -72,7 +72,7 @@ const OnboardBox = ({
             alignItems: "center",
             gap:1.25,
             width: "100%",
-            boxSizing: {md:"border-box", xs:"border-box"},
+            boxSizing: "border-box",
           }}
         >
           <Typography variant="h1" sx={{

@@ -11,6 +11,7 @@ interface ActionButtonProps {
   status?: "success" | "error" | "action";
   icon?: React.ReactNode;
   width?: number;
+  height?: number;
   onClick?: () => void;
   sx?: any;
 }
@@ -58,7 +59,8 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   ) : (
     <AddRounded />
   ),
-  width = status === "success" ? {md:149, xs:118} : {md:118, xs:100},
+  width = status === "success" ? {md:149, xs:90} : {md:118, xs:90},
+  height = status === "success" ? {md:38, xs:30, sm:35} : {md:38, xs:30, sm:35},
   onClick,
   sx,
 }) => {
@@ -68,12 +70,16 @@ const ActionButton: React.FC<ActionButtonProps> = ({
       //startIcon={icon}
       status={status}
       width={width}
+      height={height}
       onClick={onClick}
       sx={sx}
     >
-      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 , height: 10 , width: 10}}>
+      {/* <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 , height: 5 , width: 5}}>
         {icon}
-      </Box>
+      </Box> */}
+      <Typography variant="h5" color="white" sx={{ display: "flex", alignItems: "center", justifyContent: "center"}}>
+        {icon}
+      </Typography>
       <Typography variant="h5" color="white">
         {text}
       </Typography>
