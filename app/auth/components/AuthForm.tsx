@@ -6,8 +6,8 @@ import Image from "next/image";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import ArrowForward from "@mui/icons-material/ArrowForward";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import ContinueButton from "@/components/ContinueButton";
 import InputField from "@/components/InputField";
 
@@ -54,7 +54,14 @@ export default function AuthForm() {
                 boxSizing: "border-box",
               }}
             >
-              <Typography variant="h1" textAlign="center">
+              <Typography
+                 variant="h1"
+                textAlign="center"
+                sx={{
+                  fontWeight: 600,
+                color: "text.secondary",
+                }}
+              >
                 Sign In
               </Typography>
 
@@ -70,16 +77,16 @@ export default function AuthForm() {
               >
                 <InputField placeholder="Email" />
 
-                <InputField
-                  placeholder="Password"
-                  type={showPassword ? "text" : "password"}
+                <InputField 
+                placeholder="Password"
+                type={showPassword ? "text" : "password"}
                   InputProps={{
                     endAdornment: (
                       <IconButton
                         aria-label="toggle password visibility"
                         onClick={handleClickShowPassword}
                       >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                        {showPassword ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                       </IconButton>
                     ),
                   }}
@@ -142,7 +149,10 @@ export default function AuthForm() {
                 sx={{
                   textTransform: "none",
                   borderRadius: 46,
-                  height: { sm: 50, md: 61 },
+                  borderColor: 'border.main',
+                  borderWidth: 1,
+                  borderStyle: 'solid',
+                  height: 61,
                   // width: {md:396, sm:200},
                   boxSizing: "border-box",
                 }}
@@ -150,7 +160,7 @@ export default function AuthForm() {
                 <Typography
                   variant="h4"
                   sx={{
-                    color: "text.primary",
+                    color: "text.secondary",
                   }}
                 >
                   Sign in with Google
@@ -168,16 +178,8 @@ export default function AuthForm() {
             height: "100%",
             position: "relative",
           }}
-          // bgcolor="white"
-         
         >
-          <Image
-            src="/image.png"
-            alt="Auth"
-            fill
-            objectFit="contain"
-            
-          />
+  
           {/* <Box textAlign="center" color="white" maxWidth={400} px={2}> */}
         </Box>
       </Box>

@@ -18,6 +18,9 @@ declare module "@mui/material/styles" {
     dashIcons: {
       main: string;
     };
+    border: {
+      main: string;
+    };
   }
   interface PaletteOptions {
     dashboard?: PaletteOptions["primary"];
@@ -40,6 +43,9 @@ declare module "@mui/material/styles" {
       main: string;
       gray: string;
     };
+    border?: {
+      main: string;
+    };
   }
 }
 
@@ -60,7 +66,7 @@ export const theme = createTheme({
       fontSize: "34px",
       fontWeight: 600,
       textTransform: "none",
-      lineHeight: 1.2,
+      lineHeight: 1,
       color: "text.primary",
 
       "@media (max-width: 599px)": {
@@ -73,14 +79,14 @@ export const theme = createTheme({
     h2: {
       fontSize: "26px",
       fontWeight: 600,
-      lineHeight: 1.3,
+      lineHeight: 1,
       textTransform: "none",
       color: "text.primary",
       "@media (max-width: 599px)": {
-        fontSize: "24px",
+        fontSize: "22px",
       },
       "@media (max-width: 375px)": {
-        fontSize: "22px",
+        fontSize: "15px",
       },
     },
     h3: {
@@ -158,6 +164,7 @@ export const theme = createTheme({
     text: {
       primary: "#6F2C6F",
       secondary: "#252428",
+
     },
     dashboardText: {
       white: "#FFFFFF",
@@ -181,6 +188,10 @@ export const theme = createTheme({
       main: "#B39EB3",
       gray: "#E0E0E0",
     },
+    border: {
+      main: "#0000001F"
+      
+    }
   },
 });
 

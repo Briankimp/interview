@@ -8,13 +8,13 @@ const Stepp4 = () => {
   return (
     <OnboardBox
       stepLabel="STEP 4 OF 4"
-      continueLink="/onboarding/step4"
+      continueLink="/overview"
       subtitle="Create your first project to organize your clients and campaigns"
       sectionTitle="Create First Project"
       mainTitle="Onboarding"
       variant="outlined"
       buttonText="SKIP FOR NOW"
-      height={769}
+     // height={769}
     >
       <Box
         sx={{
@@ -23,12 +23,12 @@ const Stepp4 = () => {
           alignItems: "center",
           justifyContent: "center",
           height: 385,
-          width: 312,
+          width: {md:312, xs:264},
           border: "1px solid",
           borderRadius: 2,
           padding: 3,
           gap: 1.5,
-          borderColor: "primary.main",
+          borderColor: "lighert.main",
         }}
       >
         <Box

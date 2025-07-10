@@ -1,6 +1,6 @@
 import { TextField, MenuItem, styled } from "@mui/material";
-import { ArrowDropDown } from "@mui/icons-material";
 import theme from "../app/theme";
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 interface SelectInputProps {
   placeholder: string;
@@ -12,35 +12,39 @@ interface SelectInputProps {
   sx?: any;
 }
 
-const StyledTextField = styled(TextField)({
+const StyledTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
     borderRadius: 36,
-    padding: "0 17px",
-    height: 50,
+    padding: "6px 17px",
+    height: {md:61, xs:40},
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: 20,
+    gap: {md:10, xs:6},
     width: "100%",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       width: "100%",
-      maxWidth: 200,
-      padding: "0 14px",
-      height: 40,
+      maxWidth: 50,
+      padding: "6px 14px",
+      height: {md:61, xs:40},
       boxSizing: "border-box",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "primary.main",
+     borderColor: "border.main",
     },
   },
   "& .MuiOutlinedInput-input": {
-    padding: "0 8px",
+    padding: "6px 8px",
     [theme.breakpoints.down("sm")]: {
-      padding: "0 6px",
+      padding: "6px 6px",
     },
   },
-});
+  "& .MuiOutlinedInput-input::placeholder": {
+    color: theme.palette.text.secondary,
+    
+  },
+}));
 
 const SelectInput: React.FC<SelectInputProps> = ({
   placeholder,
@@ -48,8 +52,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
   onChange,
   options,
   displayEmpty = true,
-  emptyLabel = "Select an option",
-  sx,
+  emptyLabel = ""
 }) => {
   return (
     <StyledTextField
@@ -60,19 +63,31 @@ const SelectInput: React.FC<SelectInputProps> = ({
         onChange(event.target.value)
       }
       SelectProps={{
-        IconComponent: ArrowDropDown,
+        IconComponent: KeyboardArrowDownOutlinedIcon,
         displayEmpty: true,
+        renderValue: (selected: string) =>
+          selected && selected !== "" ? (
+            selected
+          ) : (
+            <span style={{ color: theme.palette.text.secondary, opacity: 0.5 }}>
+              {emptyLabel}
+            </span>
+          ),
       }}
       placeholder={placeholder}
-      sx={sx}
     >
       {displayEmpty && (
-        <MenuItem value="" disabled>
-          {emptyLabel}
+        <MenuItem value="" disabled sx={{
+          color: (theme) => theme.palette.text.secondary,
+
+        }}>
+         {emptyLabel}
         </MenuItem>
       )}
       {options.map((option) => (
-        <MenuItem key={option} value={option}>
+        <MenuItem key={option} value={option} sx={{
+          color: (theme) => theme.palette.text.secondary,
+        }}>
           {option}
         </MenuItem>
       ))}

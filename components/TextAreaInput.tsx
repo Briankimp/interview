@@ -1,5 +1,4 @@
 import { TextField, styled } from "@mui/material";
-import theme from "../app/theme";
 
 interface TextAreaInputProps {
   placeholder: string;
@@ -7,21 +6,19 @@ interface TextAreaInputProps {
   sx?: any;
 }
 
-const StyledTextField = styled(TextField)({
+const StyledTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
     borderRadius: 16,
-    height: 115,
+    height: {md:115, xs:90},
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     gap: 1.25,
     width: "100%",
     boxSizing: "border-box",
-
     [theme.breakpoints.down("sm")]: {
       width: "100%",
-
-      height: 100,
+      height: {md:115, xs:90},
       boxSizing: "border-box",
     },
 
@@ -37,7 +34,11 @@ const StyledTextField = styled(TextField)({
       boxSizing: "border-box",
     },
   },
-});
+   "& .MuiOutlinedInput-input::placeholder": {
+    color: theme.palette.text.secondary,
+    opacity: 0.5,
+  },
+}));
 
 const TextAreaInput: React.FC<TextAreaInputProps> = ({
   placeholder,
